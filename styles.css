@@ -1077,16 +1077,16 @@
     margin: 1.5rem 0;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox .summaryTitle {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox .summaryRow {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox .summaryRow .summaryLabel {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox .summaryRow .summaryValue {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive {
     margin: 2rem 0;
