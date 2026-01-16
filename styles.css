@@ -1319,8 +1319,8 @@
     font-size: 1.6rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalTitle.contactTitle {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalPrice {
     font-size: 1.6rem;
@@ -1339,6 +1339,10 @@
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup .optionLabel {
     margin-bottom: 0;
     font-size: 1.35rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="2"].isActive .optionGroup .textInput {
+    font-size: 1.1rem;
+    padding: 0.85rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions {
     gap: 1rem;
@@ -1377,14 +1381,14 @@
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .optionLabel {
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .emailText {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     margin-bottom: 0rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .fieldError {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow {
     padding: 0.65rem 0;
