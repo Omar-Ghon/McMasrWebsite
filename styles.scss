@@ -1513,14 +1513,14 @@ $strongGold: #dd9104;
   }
 
   .homeBody .productSection .merchHeaderRow .merchTitle {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
   }
 
   .homeBody .productSection .deadlineRow {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
     padding: 0.85rem 0.75rem;
     margin: 0 auto 2rem;
-    max-width: 85vw;
+    max-width: 75vw;
     font-weight: 550;
   }
 
@@ -1530,26 +1530,26 @@ $strongGold: #dd9104;
   }
 
   .homeBody .productSection .productGrid .productCard {
-    width: min(370px, 95%);
+    width: min(370px, 80%);
   }
 
   .homeBody .productSection .productGrid .productCard .productImage img {
-    height: 250px;
+    height: 200px;
   }
 
   
   .homeBody .productSection .productGrid .productCard .productInfo .productName {
-    font-size: 2rem;
+    font-size: 1.65rem;
   }
 
     
   .homeBody .productSection .productGrid .productCard .productInfo .productPrice {
-    font-size: 2.1rem;
+    font-size: 1.7rem;
   }
 
   .homeBody .productSection .productGrid .productCard .productInfo .orderButton {
-    font-size: 1.5rem;
-    padding: 0.9rem;
+    font-size: 1.25rem;
+    padding: 0.7rem;
   }
 
  /* ===== Modal (<=768): FULL SCREEN stacked (image top, content bottom) ===== */
@@ -1587,9 +1587,8 @@ $strongGold: #dd9104;
   background: #F3ECDC;
   padding: 0; /* full bleed image area */
   position: relative;
-  max-height: 40vh;      /* responsive gallery height */
+  max-height: 35vh;      /* responsive gallery height */
   min-height: 280px; /* prevents tiny gallery */
-//   max-height: 350px;
 }
 
 /* IMPORTANT: give the slider a REAL height so absolute images show */
@@ -1606,8 +1605,8 @@ $strongGold: #dd9104;
 
 /* keep slider arrows/dots usable */
 .homeBody .modalOverlay .modalSplit .modalLeft .sliderNav {
-  width: 46px;
-  height: 46px;
+  width: 44x;
+  height: 44px;
 }
 
 .homeBody .modalOverlay .modalSplit .modalLeft .sliderDots {
@@ -1616,15 +1615,15 @@ $strongGold: #dd9104;
 }
 
 .homeBody .modalOverlay .modalSplit .modalLeft .sliderDots .dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
 }
 
 
 /* --- Content area --- */
 .homeBody .modalOverlay .modalSplit .modalRight {
   flex: 1;
-  min-height: 50vh;
+  min-height: 45vh;
   overflow: auto; /* scroll the form area */
   padding: 1rem 1.4rem 1.25rem;
   background: #fff;
@@ -1635,26 +1634,23 @@ $strongGold: #dd9104;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalTitle {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalTitle.contactTitle {
-    font-size: 2rem;
-    margin: 0.5rem 0 1rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalPrice {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
 }
 
@@ -1662,46 +1658,46 @@ $strongGold: #dd9104;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup .optionLabel {
     margin-bottom: 0;
-    font-size: 1.65rem;
+    font-size: 1.45rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions {
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions .sizeOption {
     margin-bottom: 0;
-    font-size: 1.25rem;
-    padding: 0.75rem 1.3rem;
+    font-size: 1.1rem;
+    padding: 0.55rem 1rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker {
-    gap: 1.75rem;
+    gap: 1.5rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyBtn {
-    font-size: 2rem; 
+    font-size: 1.7rem; 
     width: 44px;
     height: 44px;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyValue {
-    font-size: 1.65rem; 
+    font-size: 1.4rem; 
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions {
-    margin-top: 1.25rem;
+    margin-top: 1rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions button {
-    font-size: 1.5rem;
-    padding: 1rem 1.45rem;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.45rem;
 }
 
 
