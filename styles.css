@@ -1412,6 +1412,9 @@
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .modalTitle {
     font-size: 1.6rem;
   }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive {
+    padding-bottom: 16rem;
+  }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalTitle {
     font-size: 2.1rem;
   }
@@ -1419,6 +1422,6 @@
     font-size: 1.4rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalActions button {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 }/*# sourceMappingURL=styles.css.map */
