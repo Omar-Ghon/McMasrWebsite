@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>McMasr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+</head>
+
+<body class="homeBody">
+
+<header class="header">
+  <img class="headerLogo" src="assets/icons/favicon.ico" alt="Icon">
+
+  <nav class="header-nav-desktop" aria-label="Primary">
+    <a class="header-link active" href="#">Home</a>
+    <a class="header-link" href="past-events.html">Past Events</a>
+    <a class="header-link" href="team.html">Team</a>
+    <a class="header-link" href="merch.html">Merchandise</a>
+  </nav>
+
+  <button class="burgerBtn" type="button"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="mobileNav">
+    <span class="burgerLine"></span>
+    <span class="burgerLine"></span>
+    <span class="burgerLine"></span>
+  </button>
+
+  <nav class="header-nav-mobile" id="mobileNav" aria-label="Mobile" aria-hidden="true">
+    <a class="header-link active" href="#">Home</a>
+    <a class="header-link" href="past-events.html">Past Events</a>
+    <a class="header-link" href="team.html">Team</a>
+    <a class="header-link" href="merch.html">Merchandise</a>
+  </nav>
+
+  <div class="mobileNavBackdrop" aria-hidden="true"></div>
+</header>
+
+
+<section class="productSection">
+    <div class="merchHeaderRow">
+        <h2 class="merchTitle">Merch</h2>
+
+        <!-- <button class="cancelOrderBtn" type="button" data-modal="cancelOrderModal">
+            Cancel Previous Order
+        </button> -->
+    </div>
+
+    <div class="deadlineRow"> Order Deadline: <br> Jan 16 11:59pm</div>
+
+    <div class="productGrid">
+        <div class="productCard" data-modal="productModal-hoodie">
+            <div class="productImage">
+                <img src="assets/images/products/McMasrBlackHoodieFront.jpg" alt="McMasr Hoodie">
+            </div>
+            <div class="productInfo">
+                <h3 class="productName">McMasr Hoodie</h3>
+                <p class="productPrice">$50.00</p>
+                <button class="orderButton" type="button">
+                    View
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modalOverlay" id="productModal-hoodie" aria-hidden="true">
+    <div class="modalCard" role="dialog" aria-modal="true" aria-label="McMasr Hoodie">
+        <button class="modalClose" type="button" aria-label="Close modal">×</button>
+
+        <div class="modalSplit">
+    <div class="modalLeft">
+    <div class="modalSlider" data-index="0">
+        <button class="sliderNav sliderPrev" type="button" aria-label="Previous image">
+        <span class="chev">‹</span>
+        </button>
+
+        <div class="sliderViewport">
+        <img class="sliderImage isActive" src="assets/images/products/McMasrBlackHoodieFront.jpg" alt="McMasr Hoodie - Front">
+        <img class="sliderImage" src="assets/images/products/McMasrBlackHoodieBack.jpg" alt="McMasr Hoodie - Back">
+        <img class="sliderImage" src="assets/images/products/McMasrBlackHoodieFrontNoBg.jpg" alt="McMasr Hoodie - Back">
+        </div>
+
+        <button class="sliderNav sliderNext" type="button" aria-label="Next image">
+        <span class="chev">›</span>
+        </button>
+
+        <div class="sliderDots" aria-label="Image pagination">
+        <button class="dot isActive" type="button" aria-label="Go to image 1"></button>
+        <button class="dot" type="button" aria-label="Go to image 2"></button>
+        <button class="dot" type="button" aria-label="Go to image 3"></button>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="modalRight">
+        <!-- STEP 1: Options -->
+        <div class="modalStep isActive" data-step="1">
+            <div class="modalInfo">
+                <h2 class="modalTitle">McMasr Hoodie</h2>
+                <p class="modalPrice">$50.00</p>
+            </div>
+            <p class="modalDesc">Show off your roots with a 100% premium Egyptian cotton McMasr Hoodie designed for comfort by <a href="https://www.instagram.com/blad.ca/" target="_blank" rel="noopener" class="modalLink">BLAD</a>!</p>
+            <div class="optionGroups">
+            <div class="optionGroup">
+                <label class="optionLabel">Size</label>
+                <div class="sizeOptions">
+                    <button type="button" class="sizeOption isSelected">S</button>
+                    <button type="button" class="sizeOption">M</button>
+                    <button type="button" class="sizeOption">L</button>
+                    <button type="button" class="sizeOption">XL</button>
+                </div>
+            </div>
+
+            <div class="optionGroup">
+                <label class="optionLabel">Quantity</label>
+                <div class="quantityPicker">
+                    <button type="button" class="qtyBtn" aria-label="Decrease quantity">−</button>
+                    <span class="qtyValue" aria-label="Quantity">1</span>
+                    <button type="button" class="qtyBtn" aria-label="Increase quantity">+</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="modalActions">
+                <button class="modalPrimary nextStep" type="button" data-next="2">Continue</button>
+                <button class="modalSecondary modalCloseBtn" type="button">Cancel</button>
+            </div>
+        </div>
+
+        <!-- STEP 2: Contact -->
+        <div class="modalStep" data-step="2">
+            <h2 class="modalTitle contactTitle">Contact Info</h2>
+            <div class="optionGroup">
+                <label class="optionLabel" for="orderName">Name</label>
+                <input id="orderName" class="textInput" type="text" placeholder="Your name">
+            </div>
+
+            <div class="optionGroup">
+                <label class="optionLabel" for="orderEmail">Email</label>
+                <input id="orderEmail" class="textInput" type="email" placeholder="you@email.com">
+            </div>
+
+            <p class="emailText">Order updates will be emailed to you. </p>
+
+            <div class="modalActions">
+                <button class="modalPrimary nextStep" type="button" data-next="3">Continue</button>
+                <button class="modalSecondary prevStep" type="button" data-prev="1">Back</button>
+            </div>
+        </div>
+
+        <!-- STEP 3: Confirm -->
+        <div class="modalStep" data-step="3">
+            <h2 class="modalTitle">Review & Confirm</h2>
+
+            <div class="summaryBox">
+                <div class="summaryTitle">Order Details</div>
+                <div class="summaryRow">
+                    <span class="summaryLabel">Item</span>
+                    <span class="summaryValue">McMasr Hoodie</span>
+                </div>
+                <div class="summaryRow">
+                    <span class="summaryLabel">Size</span>
+                    <span class="summaryValue summarySize">S</span>
+                </div>
+                <div class="summaryRow">
+                    <span class="summaryLabel">Quantity</span>
+                    <span class="summaryValue summaryQty">1</span>
+                </div>
+                <div class="summaryRow">
+                    <span class="summaryLabel">Email</span>
+                    <span class="summaryValue summaryEmail">you@email.com</span>
+                </div>
+                <div class="summaryRow">
+                    <span class="summaryLabel">Total</span>
+                    <span class="summaryValue summaryTotal"></span>
+                </div>
+            </div>
+
+            <div class="modalActions">
+                <button class="modalPrimary nextStep" type="button" data-next="4">Confirm Order Request</button>
+                <button class="modalSecondary prevStep" type="button" data-prev="2">Back</button>
+            </div>
+        </div>
+
+        <!-- STEP 4: Success -->
+        <div class="modalStep" data-step="4">
+            <h2 class="modalTitle">Order Received!</h2>
+            <p class="receivalText">
+                We've emailed a confirmation to <span class="receivedEmail">your email</span> <br> </br> Look out for order updates!
+            </p>
+
+            <div class="modalActions">
+                <button class="modalPrimary modalCloseBtn" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="modalOverlay cancelModal" id="cancelOrderModal" aria-hidden="true">
+  <div class="modalCard cancelCard" role="dialog" aria-modal="true" aria-label="Cancel Previous Order">
+    <button class="modalClose" type="button" aria-label="Close modal">×</button>
+
+    <div class="cancelBody">
+      <h2 class="cancelTitle">Cancel Previous Order</h2>
+
+      <div class="optionGroup">
+        <label class="optionLabel" for="cancelEmail">Email</label>
+        <input id="cancelEmail" class="textInput" type="email" placeholder="you@email.com">
+      </div>
+
+      <div class="optionGroup">
+        <label class="optionLabel" for="cancelOrderId">Order ID</label>
+        <input id="cancelOrderId" class="textInput" type="text" placeholder="e.g., MCM-8F2K1">
+      </div>
+
+        <div class="cancelActions">
+        <button class="modalPrimary cancelSubmitBtn" type="button">
+            Cancel My Order
+        </button>
+
+        <div class="cancelConfirmBox" aria-hidden="true">
+            <p class="cancelConfirmText">
+            Are you sure you want to cancel this order?
+            </p>
+
+            <div class="cancelConfirmActions">
+            <button class="modalSecondary cancelNoBtn" type="button">
+                No, go back
+            </button>
+            <button class="modalPrimary cancelYesBtn" type="button">
+                Yes, cancel it
+            </button>
+            </div>
+        </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+<div class="snackbar" id="snackbar" role="status" aria-live="polite" aria-atomic="true"></div> -->
+
+
+<script src="script.js"></script>
+</body>
+
+</html>

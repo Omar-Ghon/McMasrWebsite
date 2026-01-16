@@ -1,0 +1,1760 @@
+/* COLORS */
+
+$sand: #F3ECDC;
+$brown: #4A2F1E;
+$gold: #D8B46A;
+$red: #B54A2F;
+$strongGold: #dd9104;
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.homeBody {
+    background: $sand;
+
+    .comingSoon {
+      display: grid;
+      place-content: center;
+      color: $brown;
+      font-size: 5rem;
+      height: 65vh;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background: $brown;
+        padding: 1.5rem 10rem 1.5rem 8rem;
+
+        .headerLogo {
+            width: 7.5rem;
+            height: 7.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .header-nav-desktop {
+            display: flex;
+            gap: 6rem;
+            font-size: 1.75rem;
+
+            .header-link,
+            .header-link:visited {
+                color: $sand;
+                text-decoration: none;
+                position: relative;
+                transition: 
+                    color 0.2s ease,
+                    transform 0.2s ease;
+            }
+
+            /* Hover */
+            .header-link:hover {
+                color: $gold;
+                transform: translateY(-2px);
+            }
+
+            /* Active page */
+            .header-link.active {
+                color: $gold;
+                font-weight: 500;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -0.6rem;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $gold;
+                    border-radius: 2px;
+                }
+            }
+
+            /* Focus (keyboard accessibility) */
+            .header-link:focus-visible {
+                outline: none;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: -0.4rem;
+                    border: 2px solid $gold;
+                    border-radius: 6px;
+                }
+            }
+        }
+
+        .burgerBtn,
+        .header-nav-mobile,
+        .mobileNavBackdrop {
+        display: none;
+        }
+    }
+
+    .productSection {
+        background: $sand;
+        padding: 2rem 2rem;
+
+        .merchHeaderRow {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+            margin-bottom: 1rem;
+
+            .merchTitle {
+                margin-bottom: 0;
+                font-size: 2.5rem;
+            }
+
+            .cancelOrderBtn {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+
+                background: transparent;
+                color: $brown;
+                border: 1px solid rgba(74, 47, 30, 0.25);
+                padding: 0.6rem 1rem;
+                border-radius: 999px;
+                font-size: 1.15rem;
+                font-weight: 650;
+                cursor: pointer;
+
+                transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+
+                &:hover {
+                transform: translateY(-50%) translateY(-2px);
+                border-color: $gold;
+                background: $gold;
+                box-shadow: 0 10px 22px rgba(74, 47, 30, 0.12);
+                }
+
+                &:focus-visible {
+                outline: 2px solid $gold;
+                outline-offset: 2px;
+                }
+            }
+        }
+
+        .deadlineRow {
+            max-width: 500px;
+            text-align: center;
+            font-size: 1.25rem;
+            margin: 0 auto 2rem;
+            padding: 1rem 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07rem;
+
+            background: rgba(107, 31, 31, 0.06);
+            border-left: 4px solid $red;
+            border-right: 4px solid $red;
+            border-radius: 6px;
+
+            color: #2b2b2b;
+        }
+
+        .productGrid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+
+            .productCard {
+                background: #fff;
+                width: 320px;
+                border-radius: 12px;
+                text-decoration: none;
+                color: inherit;
+                overflow: hidden;
+                
+
+                box-shadow: 0 8px 20px rgba(74, 47, 30, 0.08);
+                transition: transform 0.25s ease,
+                            box-shadow 0.25s ease,
+                            border 0.25s ease;
+
+                &:hover {
+                    box-shadow: 0 14px 32px rgba(74, 47, 30, 0.15);
+                }
+
+                .productImage {
+                    img {
+                        width: 100%;
+                        height: 320px;
+                        object-fit: cover;
+                        display: block;
+                        border-top-left-radius: 12px;
+                        border-top-right-radius: 12px;
+                    }
+                }
+
+                .productInfo {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    padding: 1.4rem;
+                    justify-content: center;
+                    gap: 1rem;
+                    text-align: center;
+
+                    .productName {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        color: $brown;
+                    }
+
+                    .productPrice {
+                        font-size: 1.6rem;
+                        font-weight: 800;
+                        color: $strongGold;
+                        margin-bottom: 0.35rem;
+                    }
+
+                    .orderButton {
+                        background: $red;
+                        color: #fff;
+                        border: none;
+                        padding: 0.75rem 1rem;
+                        border-radius: 999px;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+
+                        transition: background 0.2s ease,
+                                    transform 0.2s ease,
+                                    box-shadow 0.2s ease;
+
+                        &:hover {
+                            background: darken($red, 3%);
+                            transform: translateY(-2px);
+                            box-shadow: 0 4px 10px rgba(181, 74, 47, 0.35);
+                        }
+
+                        &:focus-visible {
+                            outline: 2px solid $gold;
+                            outline-offset: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .modalOverlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(74, 47, 30, 0.55);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        z-index: 999;
+
+        &.isOpen {
+            display: flex;
+        }
+
+        .modalCard {
+            position: relative;
+            width: min(950px, 94vw);
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+        }
+
+        .modalClose {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            border: 1px solid rgba(74, 47, 30, 0.15);
+            background: #fff;
+            color: $brown;
+            font-size: 1.8rem;
+            line-height: 1;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+
+            &:hover {
+                transform: translateY(-1px);
+                border-color: $gold;
+                box-shadow: 0 8px 18px rgba(74, 47, 30, 0.18);
+            }
+
+            &:focus-visible {
+                outline: 2px solid $gold;
+                outline-offset: 2px;
+            }
+            }
+
+        .modalSplit {
+            display: flex;
+            min-height: 520px;
+
+            .modalLeft,
+            .modalRight {
+                flex: 0 0 50%;
+            }
+
+            .modalLeft {
+            background: $sand;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .modalSlider {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                max-height: 520px;
+            }
+
+            .sliderViewport {
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                overflow: hidden;
+                background: #fff;
+                position: relative;
+            }
+
+            .sliderImage {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover; // for product gallery, contain is usually best here
+                opacity: 0;
+                transition: opacity 0.2s ease;
+                &.isActive {
+                opacity: 1;
+                }
+            }
+
+            .sliderNav {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 44px;
+                height: 44px;
+                border-radius: 999px;
+                border: 1px solid rgba(74, 47, 30, 0.18);
+                background: rgba(255, 255, 255, 0.9);
+                color: $brown;
+                cursor: pointer;
+                display: grid;
+                place-items: center;
+                font-size: 2rem;
+                line-height: 1;
+                transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+                z-index: 5;
+
+                &:hover {
+                transform: translateY(-50%) scale(1.03);
+                border-color: $gold;
+                box-shadow: 0 10px 24px rgba(74, 47, 30, 0.18);
+                }
+
+                &:focus-visible {
+                outline: 2px solid $gold;
+                outline-offset: 2px;
+                }
+
+                &.sliderPrev {
+                left: 12px;
+
+                .chev {
+                    display: block;    
+                    line-height: 1;
+                    padding-bottom: 0.25rem;
+                    padding-right: 0.15rem;
+                }
+                }
+
+                
+
+                &.sliderNext {
+                right: 12px;
+
+                .chev {
+                    display: block;  
+                    line-height: 1;
+                    padding-bottom: 0.25rem;
+                    padding-left: 0.15rem;
+                }
+                }
+            }
+
+            .sliderDots {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 12px;
+                display: flex;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .dot {
+                width: 9px;
+                height: 9px;
+                border-radius: 999px;
+                border: none;
+                background: $sand;
+                cursor: pointer;
+                transition: transform 0.2s ease, background 0.2s ease;
+
+                &.isActive {
+                background: $gold;
+                transform: scale(1.15);
+                }
+
+                &:focus-visible {
+                outline: 2px solid $gold;
+                outline-offset: 2px;
+                }
+            }
+            }
+
+
+            .modalRight {
+                padding: 1.5rem 2.25rem 1.5rem;
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(8px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .modalStep {
+                    display: none;
+
+                    &.isActive {
+                        display: block;
+                        animation: fadeInUp 0.4s ease-out;
+                    }
+
+                    .optionGroup {
+                        margin-bottom: 1.25rem;
+
+                        .optionLabel {
+                            display: block;
+                            font-size: 1.3rem;
+                            font-weight: 650;
+                            color: $brown;
+                            margin-bottom: 0.75rem;
+                        }
+
+                        .sizeOptions {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 1.25rem;
+
+                            .sizeOption {
+                                border: 1px solid rgba(74, 47, 30, 0.22);
+                                background: #fff;
+                                color: $brown;
+                                border-radius: 999px;
+                                padding: 0.65rem 1.25rem;
+                                font-weight: 650;
+                                font-size: 0.9rem;
+                                cursor: pointer;
+                                transition: transform 0.15s ease, border 0.15s ease, box-shadow 0.15s ease;
+
+                                &:hover {
+                                    transform: translateY(-1px);
+                                    border-color: $gold;
+                                    box-shadow: 0 8px 18px rgba(74, 47, 30, 0.12);
+                                }
+
+                                &.isSelected {
+                                    border-color: $gold;
+                                    box-shadow: 0 0 0 2px rgba(215, 180, 106, 0.35);
+                                }
+
+                                &:focus-visible {
+                                    outline: 2px solid $gold;
+                                    outline-offset: 2px;
+                                }
+                            }
+                        }
+
+                        .quantityPicker {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 1rem;
+                            border: 1px solid rgba(74, 47, 30, 0.22);
+                            border-radius: 999px;
+                            padding: 0.5rem 0.75rem;
+                            background: #fff;
+                            margin-bottom: 0.25rem;
+
+                            .qtyBtn {
+                                width: 32px;
+                                height: 32px;
+                                border-radius: 999px;
+                                border: none;
+                                background: $sand;
+                                color: $brown;
+                                font-size: 1.2rem;
+                                cursor: pointer;
+                                display: grid;
+                                place-items: center;
+                                transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+                                &:hover {
+                                    transform: translateY(-1px);
+                                    box-shadow: 0 8px 16px rgba(74, 47, 30, 0.12);
+                                }
+
+                                &:focus-visible {
+                                    outline: 2px solid $gold;
+                                outline-offset: 2px;
+                            }
+                        }
+
+                        .qtyValue {
+                            min-width: 24px;
+                            font-size: 1.15rem;
+                            text-align: center;
+                            font-weight: 700;
+                            color: $brown;
+                        }
+                    }
+
+                    .textInput {
+                        width: 100%;
+                        border-radius: 12px;
+                        border: 1px solid rgba(74, 47, 30, 0.22);
+                        padding: 0.85rem 1rem;
+                        font-size: 1.1rem;
+                        color: $brown;
+                        background: #fff;
+
+                        &:focus-visible {
+                            outline: 2px solid $gold;
+                        }
+
+                        &.isInvalid {
+                            border: 2px solid $red;
+                        }
+                    }
+
+                                    
+                    .fieldError {
+                    margin-top: 0.5rem;
+                    font-size: 1.2rem;
+                    color: $red;
+                    font-weight: 600;
+                    }
+                }
+
+                .summaryBox {
+                    border: 1px solid rgba(74, 47, 30, 0.18);
+                    border-radius: 14px;
+                    padding: 0.5rem 1.1rem;
+                    background: rgba(243, 236, 220, 0.55);
+                    margin: 1rem 0 1.25rem;
+
+                    .summaryTitle {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        letter-spacing: 0.1rem;
+                        text-transform: uppercase;
+                        color: rgba(74, 47, 30, 0.65);
+
+                        padding-bottom: 0.6rem;
+                        margin: 0.5rem 0 0.6rem;
+
+                        border-bottom: 2px solid rgba(74, 47, 30, 0.18);
+                    }
+
+                    .summaryRow {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 1rem;
+                        padding: 0.75rem 0;
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid rgba(74, 47, 30, 0.12);
+                        }
+
+                        .summaryLabel {
+                            color: rgba(74, 47, 30, 0.7);
+                            font-weight: 650;
+                            font-size: 1.2rem;
+                        }
+
+                        .summaryValue {
+                            color: $brown;
+                            font-weight: 700;
+                            font-size: 1.1rem;
+                        }
+
+                    }
+                }
+
+                .modalTitle {
+                    color: $brown;
+                    font-size: 2.25rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+
+                    &.contactTitle {
+                        margin-bottom: 1.5rem;
+                    }
+                }
+
+                .modalPrice {
+                    color: $strongGold;
+                    font-size: 1.75rem;
+                    font-weight: 600;
+                    margin-bottom: 1.25rem;
+                }
+
+                .modalDesc {
+                    font-size: 1.45rem;
+                    margin-bottom: 1rem;
+                    line-height: 1.3;
+
+                    .modalLink {
+                        color: black;
+                        text-underline-offset: 2px;
+                    }
+                }
+                
+                .emailText {
+                    color: $brown;
+                    font-size: 1.25rem;
+                    line-height: 1.5;
+                    margin-bottom: 1rem;
+                }
+
+                .confirmationText {
+                    color: $brown;
+                    font-size: 1.2rem;
+                    line-height: 1.5;
+                    margin-bottom: 1rem;
+                }
+
+                .modalActions {
+                    display: flex;
+                    gap: 1.1rem;
+                    flex-wrap: wrap;
+                    margin-top: 1.75rem;
+
+                    button {
+                        border-radius: 999px;
+                        padding: 0.8rem 1.45rem;
+                        font-weight: 650;
+                        cursor: pointer;
+                        border: none;
+                        font-size: 1.2rem;
+                        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+                    }
+
+                    .modalPrimary {
+                        background: $red;
+                        color: #fff;
+
+                        &:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 10px 22px rgba(181, 74, 47, 0.35);
+                        }
+
+                        &:focus-visible {
+                            outline: 2px solid $gold;
+                            outline-offset: 2px;
+                        }
+                    }
+
+                    .modalSecondary {
+                        background: #fcfcfc;
+                        color: $brown;
+                        border: 1px solid rgba(74, 47, 30, 0.22);
+
+                        &:hover {
+                            transform: translateY(-2px);
+                            border-color: $gold;
+                            box-shadow: 0 10px 22px rgba(74, 47, 30, 0.12);
+                        }
+
+                        &:focus-visible {
+                            outline: 2px solid $gold;
+                            outline-offset: 2px;
+                        }
+                    }
+                }
+            }
+
+            .modalStep[data-step="4"].isActive {
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+
+                .modalTitle {
+                    margin-bottom: 0.75rem;
+                    font-size: 2.5rem;
+                    color: $red;
+                }
+
+
+                .receivalText {
+                    max-width: 320px;
+                    font-size: 1.3rem;
+                    font-weight: 300;
+                    line-height: 1.5;
+                    color: #000;
+                    margin-bottom: 2rem;
+                }
+
+                .modalActions {
+                    margin-top: 0;
+                    justify-content: center;
+                }
+            }
+        }
+
+    }
+
+    }
+
+    .cancelModal {
+
+        .cancelCard {
+            width: min(560px, 94vw);
+
+            .cancelBody {
+            padding: 2.25rem 2.25rem 2rem;
+
+            .cancelTitle {
+                font-size: 2.25rem;
+                font-weight: 700;
+                color: $brown;
+                margin-bottom: 1rem;
+            }
+
+            .cancelText {
+                font-size: 1.15rem;
+                color: rgba(74, 47, 30, 0.75);
+                margin-bottom: 1.5rem;
+            }
+
+            .optionGroup {
+                margin-bottom: 1.25rem;
+
+                .optionLabel {
+                    display: block;
+                    font-size: 1.5rem;
+                    font-weight: 650;
+                    color: $brown;
+                    margin-bottom: 0.75rem;
+                }
+
+
+                .textInput {
+                    width: 100%;
+                    border-radius: 12px;
+                    border: 1px solid rgba(74, 47, 30, 0.22);
+                    padding: 0.85rem 1rem;
+                    font-size: 1.1rem;
+                    color: $brown;
+                    background: #fff;
+
+                    &:focus-visible {
+                        outline: 2px solid $gold;
+                    }
+
+                    &.isInvalid {
+                        border: 2px solid $red;
+                    }
+                }               
+                .fieldError {
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+                color: $red;
+                font-weight: 600;
+                }
+            }
+
+            .cancelActions {
+                text-align: center;
+                button {
+                    border-radius: 999px;
+                    padding: 0.8rem 1.45rem;
+                    font-weight: 650;
+                    cursor: pointer;
+                    border: none;
+                    font-size: 1.2rem;
+                    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+                }
+
+                .modalPrimary {
+                    background: $red;
+                    color: #fff;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 10px 22px rgba(181, 74, 47, 0.35);
+                    }
+
+                    &:focus-visible {
+                        outline: 2px solid $gold;
+                        outline-offset: 2px;
+                    }
+                }
+            }
+
+            .cancelConfirmBox {
+                display: none;
+                margin-top: 1rem;
+                padding: 1rem 1.1rem;
+                border-radius: 14px;
+                border: 1px solid rgba(74, 47, 30, 0.18);
+                background: rgba(243, 236, 220, 0.55);
+
+                .cancelConfirmText {
+                color: $brown;
+                font-size: 1.2rem;
+                font-weight: 650;
+                line-height: 1.4;
+                margin-bottom: 1rem;
+                text-align: center;
+                }
+
+                .cancelConfirmActions {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                button {
+                    border-radius: 999px;
+                    padding: 0.8rem 1.45rem;
+                    font-weight: 650;
+                    cursor: pointer;
+                    border: none;
+                    font-size: 1.2rem;
+                    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+                }
+
+                .modalPrimary {
+                    background: $red;
+                    color: #fff;
+
+                    &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 22px rgba(181, 74, 47, 0.35);
+                    }
+
+                    &:focus-visible {
+                    outline: 2px solid $gold;
+                    outline-offset: 2px;
+                    }
+                }
+
+                .modalSecondary {
+                    background: #fcfcfc;
+                    color: $brown;
+                    border: 1px solid rgba(74, 47, 30, 0.22);
+
+                    &:hover {
+                    transform: translateY(-2px);
+                    border-color: $gold;
+                    box-shadow: 0 10px 22px rgba(74, 47, 30, 0.12);
+                    }
+
+                    &:focus-visible {
+                    outline: 2px solid $gold;
+                    outline-offset: 2px;
+                    }
+                }
+                }
+            }
+
+            &.isConfirming {
+                .cancelSubmitBtn { display: none; }
+                .cancelConfirmBox { display: block; }
+
+                #cancelEmail,
+                #cancelOrderId {
+                    opacity: 0.65;
+                    pointer-events: none;
+                }
+            }
+
+
+            
+
+            }
+        }
+
+    }
+
+    .snackbar {
+        position: fixed;
+        left: 50%;
+        bottom: 24px;
+        transform: translateX(-50%) translateY(16px);
+        opacity: 0;
+        pointer-events: none;
+
+        background: rgba(74, 47, 30, 0.95);
+        color: $sand;
+
+        padding: 0.9rem 1.2rem;
+        border-radius: 999px;
+        font-size: 1.05rem;
+        font-weight: 650;
+
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        transition: opacity 0.22s ease, transform 0.22s ease;
+        z-index: 2000;
+
+        &.isOpen {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        }
+
+
+}
+
+@media screen and (max-width: 1024px) {
+  .homeBody {
+
+    .header {
+      padding: 2rem 6rem 2rem 3.5rem;
+      position: relative;
+
+      .headerLogo {
+        width: 8rem;
+        height: 8rem;
+      }
+
+      .header-nav-desktop {
+        display: none;
+      }
+
+      .burgerBtn {
+        display: grid;
+        place-items: center;
+        width: 64px;
+        height: 64px;
+
+        border: none;
+        background: transparent;
+        border-radius: 12px;
+
+        cursor: pointer;
+        padding: 0;
+        gap: 0.75rem;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.10);
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-visible {
+          outline: 2px solid $gold;
+          outline-offset: 3px;
+        }
+
+        .burgerLine {
+          display: block;
+          width: 64px;
+          height: 6px;
+          background: $sand;
+          border-radius: 2px;
+
+          transform-origin: center;
+          transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+      }
+
+      /* drawer (hidden by default) */
+      .header-nav-mobile {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 1.25rem;
+        left: 1.25rem;
+
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        padding: 0.75rem;
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+        z-index: 1500;
+
+        .header-link,
+        .header-link:visited {
+          color: $brown;
+          text-decoration: none;
+          font-size: 2rem;
+          font-weight: 700;
+          padding: 0.85rem 0.9rem;
+          border-radius: 12px;
+        }
+
+        .header-link.active {
+          background: rgba(216, 180, 106, 0.22);
+          color: $brown;
+        }
+      }
+
+      /* backdrop behind drawer */
+      .mobileNavBackdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1400;
+      }
+
+      /* when menu open */
+      &.isMenuOpen {
+        .header-nav-mobile {
+          display: flex;
+        }
+
+        .mobileNavBackdrop {
+          display: block;
+        }
+
+        /* X animation */
+        .burgerBtn .burgerLine:nth-child(1) {
+          transform: translateY(25px) rotate(45deg);
+          width: 56px;
+        }
+
+        .burgerBtn .burgerLine:nth-child(2) {
+          opacity: 0;
+        }
+
+        .burgerBtn .burgerLine:nth-child(3) {
+          transform: translateY(-25px) rotate(-45deg);
+          width: 56px;
+        }
+      }
+    }
+
+    /* =====================
+       Product section (tablet)
+       ===================== */
+    .productSection {
+      padding: 2rem 1.5rem;
+
+      .merchHeaderRow {
+        .merchTitle {
+          font-size: 3.5rem;
+        }
+      }
+
+      .deadlineRow {
+        max-width: 360px;
+        font-size: 1.6rem;
+        font-weight: 550;
+        padding: 1.1rem 0.75rem;
+        margin-bottom: 3rem;
+      }
+
+      .productGrid {
+        gap: 2.5rem;
+
+        .productCard {
+          width: 360px;
+
+          .productImage {
+            img {
+              height: 300px;
+            }
+          }
+
+          .productInfo {
+            .productName {
+              font-size: 2rem;
+            }
+
+            .productPrice {
+              font-size: 2rem;
+            }
+
+            .orderButton {
+              font-size: 1.5rem;
+              padding: 0.9rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+  .homeBody {
+    .modalOverlay {
+      padding: 1.25rem;
+      align-items: center;
+      justify-content: center;
+
+      .modalCard {
+        width: min(720px, 96vw);
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .modalSplit {
+        /* override desktop split */
+        display: flex;
+        flex-direction: column;
+        min-height: 0;     /* allow children to scroll */
+        height: 100%;      /* so left/right can use % heights */
+      }
+
+      .modalClose {
+        width: 42px;
+        height: 42px;
+        font-size: 1.65rem;
+        top: 12px;
+        right: 12px;
+      }
+
+      .modalSplit {
+        .modalLeft,
+        .modalRight {
+          flex: 0 0 auto;  /* kill desktop 50/50 */
+          width: 100%;
+        }
+
+        .modalLeft {
+          /* IMPORTANT: don't center content for tablet */
+          align-items: stretch;
+          justify-content: stretch;
+
+          /* give the left side a real height */
+          height: clamp(280px, 38vh, 440px);
+          min-height: 280px;
+
+          padding: 0;
+          position: relative;
+          background: $sand;
+
+          /* make the slider fill left */
+          .modalSlider {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            max-height: none;
+          }
+
+          /* ensure viewport is the full height box */
+          .sliderViewport {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+          }
+
+          /* absolute images need a real box */
+          .sliderImage {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          /* dots should anchor to the bottom of the slider */
+          .sliderDots {
+            bottom: 20px;
+          }
+
+          /* optional: slightly bigger dots for tablet */
+          .dot {
+            width: 16px;
+            height: 16px;
+          }
+
+          .sliderNav {
+            width: 64px;
+            height: 64px;
+            
+            .chev {
+              transform: scale(1.5);
+            }
+          }
+        }
+
+        .modalRight {
+          flex: 1;
+          min-height: 0;
+          overflow: auto;
+          padding: 1.25rem 1.75rem 1.25rem;
+          background: #fff;
+
+        
+
+          .modalStep {
+            .modalInfo {
+              display: flex;
+              justify-content: space-between;
+
+              .modalTitle {
+                font-size: 2.65rem;
+              }
+
+              .modalPrice {
+                font-size: 2.5rem;
+              }
+            }
+            .modalDesc {
+              font-size: 2rem;
+            }
+
+            .optionGroups {
+              display: flex;
+              gap: 4rem;
+
+              .optionGroup {
+                .optionLabel {
+                  font-size: 2rem;
+                  margin-bottom: 1.25rem;
+                }
+
+                .sizeOptions {
+                  .sizeOption {
+                    font-size: 1.5rem;
+                    padding: 1rem 1.5rem;
+                  }
+                }
+
+                .quantityPicker {
+                  gap: 2rem;
+                  padding: 0.75rem 1.5rem;
+
+                  .qtyBtn {
+                    width: 56px;
+                    height: 56px;
+                    font-size: 2rem;
+                  }
+
+                  .qtyValue {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+
+            .modalActions {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              gap: 1.25rem;
+              margin-top: 0.5rem;
+
+              button { 
+                font-size: 1.75rem;    
+                padding: 1rem 1.75rem;
+                width: auto;
+              }
+            }
+
+            .modalTitle.contactTitle {
+              font-size: 2.65rem;
+            }
+
+            
+          }
+
+          .modalStep[data-step="2"].isActive {
+            .optionGroup {
+              .optionLabel {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+              }
+
+              .textInput {
+                font-size: 1.4rem;
+                padding: 1rem;
+              }
+
+              .fieldError {
+                margin-top: 0.75rem;
+                font-size: 1.4rem;
+              }
+            }
+
+            .emailText {
+              font-size: 1.75rem;
+              margin-bottom: 1.5rem;
+            }
+          }
+
+          .modalStep[data-step="3"].isActive {
+            .summaryBox {
+              margin: 1.5rem 0;
+              .summaryTitle {
+                font-size: 1.75rem;
+              }
+              .summaryRow {
+                padding: 1rem 0;
+                .summaryLabel {
+                  font-size: 1.7rem;
+                }
+
+                .summaryValue {
+                  font-size: 1.7rem;
+                }
+              }
+            }
+          }
+
+          .modalStep[data-step="4"].isActive {
+            margin: 2rem 0;
+
+            .modalTitle {
+              font-size: 3rem;
+            }
+
+            .receivalText {
+              font-size: 2rem;
+              max-width: 450px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+/* ---------- <= 768px (phone / small tablet) ---------- */
+@media screen and (max-width: 768px) {
+
+  /* ===== Header -> Burger + Drawer ===== */
+  .homeBody .header {
+    padding: 1.5rem 2.5rem;
+    position: relative;
+  }
+
+  .homeBody .comingSoon {
+    font-size: 3rem;
+  }
+
+  .homeBody .header .headerLogo {
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+
+  /* Hide desktop nav */
+  .homeBody .header .header-nav-desktop {
+    display: none;
+  }
+
+  /* Show burger */
+    .homeBody .header .burgerBtn {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+
+    /* remove the “circle” look by default */
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+
+    cursor: pointer;
+    padding: 0;
+    }
+
+    /* only show a subtle background on hover/focus */
+    .homeBody .header .burgerBtn:hover {
+    background: rgba(255, 255, 255, 0.10);
+    }
+
+    .homeBody .header .burgerBtn:focus {
+    outline: none;
+    }
+
+    .homeBody .header .burgerBtn:focus-visible {
+    outline: 2px solid #D8B46A; /* gold */
+    outline-offset: 3px;
+    }
+
+
+    .homeBody .header .burgerBtn .burgerLine {
+        display: block;
+        width: 36px;              
+        height: 4px;
+        background: #F3ECDC;
+        border-radius: 2px;
+
+        transform-origin: center;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+
+  .homeBody .header .burgerBtn {
+    gap: 5px;
+  }
+
+  /* Drawer (hidden by default) */
+  .homeBody .header .header-nav-mobile {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 1.25rem;
+    left: 1.25rem;
+
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    padding: 0.75rem;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1500;
+  }
+
+  .homeBody .header .header-nav-mobile .header-link,
+  .homeBody .header .header-nav-mobile .header-link:visited {
+    color: #4A2F1E;
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 700;
+    padding: 0.85rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  .homeBody .header .header-nav-mobile .header-link.active {
+    background: rgba(216, 180, 106, 0.22);
+    color: #4A2F1E;
+  }
+
+  /* Backdrop behind drawer */
+  .homeBody .header .mobileNavBackdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1400;
+  }
+
+  /* When header has menu open */
+  .homeBody .header.isMenuOpen .header-nav-mobile {
+    display: flex;
+  }
+
+  .homeBody .header.isMenuOpen .mobileNavBackdrop {
+    display: block;
+  }
+
+  /* Nice "X" animation (optional but clean) */
+    .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(1) {
+    transform: translateY(16px) rotate(45deg);
+    width: 40px;
+    }
+
+    .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(2) {
+    opacity: 0;
+    }
+
+    .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(3) {
+    transform: translateY(-16px) rotate(-45deg);
+    width: 40px;
+    }
+
+
+  .homeBody .header .burgerBtn .burgerLine {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+
+  /* ===== Product section ===== */
+  .homeBody .productSection {
+    padding: 1.5rem 1rem;
+  }
+
+  .homeBody .productSection .merchHeaderRow .merchTitle {
+    font-size: 2.75rem;
+  }
+
+  .homeBody .productSection .deadlineRow {
+    font-size: 1.35rem;
+    padding: 0.85rem 0.75rem;
+    margin: 0 auto 2rem;
+    max-width: 85vw;
+    font-weight: 550;
+  }
+
+  /* Make cards full-width on phone */
+  .homeBody .productSection .productGrid {
+    gap: 1.25rem;
+  }
+
+  .homeBody .productSection .productGrid .productCard {
+    width: min(370px, 95%);
+  }
+
+  .homeBody .productSection .productGrid .productCard .productImage img {
+    height: 250px;
+  }
+
+  
+  .homeBody .productSection .productGrid .productCard .productInfo .productName {
+    font-size: 2rem;
+  }
+
+    
+  .homeBody .productSection .productGrid .productCard .productInfo .productPrice {
+    font-size: 2.1rem;
+  }
+
+  .homeBody .productSection .productGrid .productCard .productInfo .orderButton {
+    font-size: 1.5rem;
+    padding: 0.9rem;
+  }
+
+ /* ===== Modal (<=768): FULL SCREEN stacked (image top, content bottom) ===== */
+.homeBody .modalOverlay {
+  padding: 0;
+  align-items: stretch; /* full height */
+}
+
+.homeBody .modalOverlay .modalCard {
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* stack image then content */
+.homeBody .modalOverlay .modalSplit {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* enables internal scrolling */
+}
+
+.homeBody .modalOverlay .modalLeft,
+.homeBody .modalOverlay .modalRight {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+/* --- Image/Gallery area --- */
+.homeBody .modalOverlay .modalLeft {
+  background: #F3ECDC;
+  padding: 0; /* full bleed image area */
+  position: relative;
+  max-height: 40vh;      /* responsive gallery height */
+  min-height: 280px; /* prevents tiny gallery */
+//   max-height: 350px;
+}
+
+/* IMPORTANT: give the slider a REAL height so absolute images show */
+.homeBody .modalOverlay .modalSplit .modalLeft .modalSlider {
+  height: 100%;
+  width: 100%;
+}
+
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderViewport {
+  height: 100%;
+  width: 100%;
+  border-radius: 0;  /* full bleed on phone */
+}
+
+/* keep slider arrows/dots usable */
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderNav {
+  width: 46px;
+  height: 46px;
+}
+
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderDots {
+  bottom: 18px;
+  gap: 0.6rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderDots .dot {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* --- Content area --- */
+.homeBody .modalOverlay .modalSplit .modalRight {
+  flex: 1;
+  min-height: 50vh;
+  overflow: auto; /* scroll the form area */
+  padding: 1rem 1.4rem 1.25rem;
+  background: #fff;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalTitle {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalTitle.contactTitle {
+    font-size: 2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalPrice {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup .optionLabel {
+    margin-bottom: 0;
+    font-size: 1.65rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions {
+    gap: 0.8rem;
+}
+
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions .sizeOption {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.3rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker {
+    gap: 1.75rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyBtn {
+    font-size: 2rem; 
+    width: 44px;
+    height: 44px;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyValue {
+    font-size: 1.65rem; 
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions {
+    margin-top: 1.25rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions button {
+    font-size: 1.5rem;
+    padding: 1rem 1.45rem;
+}
+
+
+
+/* buttons stack */
+.homeBody .modalOverlay .modalRight .modalActions button {
+  width: 100%;
+  justify-content: center;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="2"].isActive .optionGroup {
+    margin-bottom: 1rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .optionLabel {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .emailText {
+    font-size: 1.4rem;
+    margin-bottom: 0rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .fieldError {
+    font-size: 1.2rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow {
+    padding: 0.65rem 0
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow .summaryLabel {
+    font-size: 1.3rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow .summaryValue {
+    font-size: 1.3rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalTitle {
+    font-size: 2.75rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .receivalText {
+    font-size: 2rem;
+}
+
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalActions button {
+    font-size: 2rem;
+}
+
+
+
+}
+

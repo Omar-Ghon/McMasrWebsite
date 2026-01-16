@@ -1,0 +1,1408 @@
+@charset "UTF-8";
+/* COLORS */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.homeBody {
+  background: #F3ECDC;
+}
+.homeBody .comingSoon {
+  display: grid;
+  place-content: center;
+  color: #4A2F1E;
+  font-size: 5rem;
+  height: 65vh;
+}
+.homeBody .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4A2F1E;
+  padding: 1.5rem 10rem 1.5rem 8rem;
+}
+.homeBody .header .headerLogo {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.homeBody .header .header-nav-desktop {
+  display: flex;
+  gap: 6rem;
+  font-size: 1.75rem;
+  /* Hover */
+  /* Active page */
+  /* Focus (keyboard accessibility) */
+}
+.homeBody .header .header-nav-desktop .header-link,
+.homeBody .header .header-nav-desktop .header-link:visited {
+  color: #F3ECDC;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.homeBody .header .header-nav-desktop .header-link:hover {
+  color: #D8B46A;
+  transform: translateY(-2px);
+}
+.homeBody .header .header-nav-desktop .header-link.active {
+  color: #D8B46A;
+  font-weight: 500;
+}
+.homeBody .header .header-nav-desktop .header-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.6rem;
+  width: 100%;
+  height: 2px;
+  background-color: #D8B46A;
+  border-radius: 2px;
+}
+.homeBody .header .header-nav-desktop .header-link:focus-visible {
+  outline: none;
+}
+.homeBody .header .header-nav-desktop .header-link:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: -0.4rem;
+  border: 2px solid #D8B46A;
+  border-radius: 6px;
+}
+.homeBody .header .burgerBtn,
+.homeBody .header .header-nav-mobile,
+.homeBody .header .mobileNavBackdrop {
+  display: none;
+}
+.homeBody .productSection {
+  background: #F3ECDC;
+  padding: 2rem 2rem;
+}
+.homeBody .productSection .merchHeaderRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.homeBody .productSection .merchHeaderRow .merchTitle {
+  margin-bottom: 0;
+  font-size: 2.5rem;
+}
+.homeBody .productSection .merchHeaderRow .cancelOrderBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: #4A2F1E;
+  border: 1px solid rgba(74, 47, 30, 0.25);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-size: 1.15rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+.homeBody .productSection .merchHeaderRow .cancelOrderBtn:hover {
+  transform: translateY(-50%) translateY(-2px);
+  border-color: #D8B46A;
+  background: #D8B46A;
+  box-shadow: 0 10px 22px rgba(74, 47, 30, 0.12);
+}
+.homeBody .productSection .merchHeaderRow .cancelOrderBtn:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .productSection .deadlineRow {
+  max-width: 500px;
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 0 auto 2rem;
+  padding: 1rem 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  background: rgba(107, 31, 31, 0.06);
+  border-left: 4px solid #B54A2F;
+  border-right: 4px solid #B54A2F;
+  border-radius: 6px;
+  color: #2b2b2b;
+}
+.homeBody .productSection .productGrid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.homeBody .productSection .productGrid .productCard {
+  background: #fff;
+  width: 320px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(74, 47, 30, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+.homeBody .productSection .productGrid .productCard:hover {
+  box-shadow: 0 14px 32px rgba(74, 47, 30, 0.15);
+}
+.homeBody .productSection .productGrid .productCard .productImage img {
+  width: 100%;
+  height: 320px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.homeBody .productSection .productGrid .productCard .productInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1.4rem;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+.homeBody .productSection .productGrid .productCard .productInfo .productName {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #4A2F1E;
+}
+.homeBody .productSection .productGrid .productCard .productInfo .productPrice {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #dd9104;
+  margin-bottom: 0.35rem;
+}
+.homeBody .productSection .productGrid .productCard .productInfo .orderButton {
+  background: #B54A2F;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.homeBody .productSection .productGrid .productCard .productInfo .orderButton:hover {
+  background: rgb(168.8539473684, 69.0342105263, 43.8460526316);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(181, 74, 47, 0.35);
+}
+.homeBody .productSection .productGrid .productCard .productInfo .orderButton:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 47, 30, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 999;
+}
+.homeBody .modalOverlay.isOpen {
+  display: flex;
+}
+.homeBody .modalOverlay .modalCard {
+  position: relative;
+  width: min(950px, 94vw);
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+}
+.homeBody .modalOverlay .modalClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(74, 47, 30, 0.15);
+  background: #fff;
+  color: #4A2F1E;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+.homeBody .modalOverlay .modalClose:hover {
+  transform: translateY(-1px);
+  border-color: #D8B46A;
+  box-shadow: 0 8px 18px rgba(74, 47, 30, 0.18);
+}
+.homeBody .modalOverlay .modalClose:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .modalOverlay .modalSplit {
+  display: flex;
+  min-height: 520px;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft,
+.homeBody .modalOverlay .modalSplit .modalRight {
+  flex: 0 0 50%;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft {
+  background: #F3ECDC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .modalSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderViewport {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderImage.isActive {
+  opacity: 1;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(74, 47, 30, 0.18);
+  background: rgba(255, 255, 255, 0.9);
+  color: #4A2F1E;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  z-index: 5;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderNav:hover {
+  transform: translateY(-50%) scale(1.03);
+  border-color: #D8B46A;
+  box-shadow: 0 10px 24px rgba(74, 47, 30, 0.18);
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderNav:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderNav.sliderPrev {
+  left: 12px;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderNav.sliderPrev .chev {
+  display: block;
+  line-height: 1;
+  padding-bottom: 0.25rem;
+  padding-right: 0.15rem;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderNav.sliderNext {
+  right: 12px;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderNav.sliderNext .chev {
+  display: block;
+  line-height: 1;
+  padding-bottom: 0.25rem;
+  padding-left: 0.15rem;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .sliderDots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: none;
+  background: #F3ECDC;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .dot.isActive {
+  background: #D8B46A;
+  transform: scale(1.15);
+}
+.homeBody .modalOverlay .modalSplit .modalLeft .dot:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .modalOverlay .modalSplit .modalRight {
+  padding: 1.5rem 2.25rem 1.5rem;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep {
+  display: none;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep.isActive {
+  display: block;
+  animation: fadeInUp 0.4s ease-out;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup {
+  margin-bottom: 1.25rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .optionLabel {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 650;
+  color: #4A2F1E;
+  margin-bottom: 0.75rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions .sizeOption {
+  border: 1px solid rgba(74, 47, 30, 0.22);
+  background: #fff;
+  color: #4A2F1E;
+  border-radius: 999px;
+  padding: 0.65rem 1.25rem;
+  font-weight: 650;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, border 0.15s ease, box-shadow 0.15s ease;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions .sizeOption:hover {
+  transform: translateY(-1px);
+  border-color: #D8B46A;
+  box-shadow: 0 8px 18px rgba(74, 47, 30, 0.12);
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions .sizeOption.isSelected {
+  border-color: #D8B46A;
+  box-shadow: 0 0 0 2px rgba(215, 180, 106, 0.35);
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions .sizeOption:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(74, 47, 30, 0.22);
+  border-radius: 999px;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  margin-bottom: 0.25rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  background: #F3ECDC;
+  color: #4A2F1E;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(74, 47, 30, 0.12);
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyBtn:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyValue {
+  min-width: 24px;
+  font-size: 1.15rem;
+  text-align: center;
+  font-weight: 700;
+  color: #4A2F1E;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .textInput {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(74, 47, 30, 0.22);
+  padding: 0.85rem 1rem;
+  font-size: 1.1rem;
+  color: #4A2F1E;
+  background: #fff;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .textInput:focus-visible {
+  outline: 2px solid #D8B46A;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .textInput.isInvalid {
+  border: 2px solid #B54A2F;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .fieldError {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #B54A2F;
+  font-weight: 600;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox {
+  border: 1px solid rgba(74, 47, 30, 0.18);
+  border-radius: 14px;
+  padding: 0.5rem 1.1rem;
+  background: rgba(243, 236, 220, 0.55);
+  margin: 1rem 0 1.25rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: rgba(74, 47, 30, 0.65);
+  padding-bottom: 0.6rem;
+  margin: 0.5rem 0 0.6rem;
+  border-bottom: 2px solid rgba(74, 47, 30, 0.18);
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow:not(:last-child) {
+  border-bottom: 1px solid rgba(74, 47, 30, 0.12);
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow .summaryLabel {
+  color: rgba(74, 47, 30, 0.7);
+  font-weight: 650;
+  font-size: 1.2rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow .summaryValue {
+  color: #4A2F1E;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalTitle {
+  color: #4A2F1E;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalTitle.contactTitle {
+  margin-bottom: 1.5rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalPrice {
+  color: #dd9104;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc {
+  font-size: 1.45rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc .modalLink {
+  color: black;
+  text-underline-offset: 2px;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .emailText {
+  color: #4A2F1E;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .confirmationText {
+  color: #4A2F1E;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions button {
+  border-radius: 999px;
+  padding: 0.8rem 1.45rem;
+  font-weight: 650;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions .modalPrimary {
+  background: #B54A2F;
+  color: #fff;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions .modalPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(181, 74, 47, 0.35);
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions .modalPrimary:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions .modalSecondary {
+  background: #fcfcfc;
+  color: #4A2F1E;
+  border: 1px solid rgba(74, 47, 30, 0.22);
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions .modalSecondary:hover {
+  transform: translateY(-2px);
+  border-color: #D8B46A;
+  box-shadow: 0 10px 22px rgba(74, 47, 30, 0.12);
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions .modalSecondary:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalTitle {
+  margin-bottom: 0.75rem;
+  font-size: 2.5rem;
+  color: #B54A2F;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .receivalText {
+  max-width: 320px;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 2rem;
+}
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalActions {
+  margin-top: 0;
+  justify-content: center;
+}
+.homeBody .cancelModal .cancelCard {
+  width: min(560px, 94vw);
+}
+.homeBody .cancelModal .cancelCard .cancelBody {
+  padding: 2.25rem 2.25rem 2rem;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #4A2F1E;
+  margin-bottom: 1rem;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelText {
+  font-size: 1.15rem;
+  color: rgba(74, 47, 30, 0.75);
+  margin-bottom: 1.5rem;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .optionGroup {
+  margin-bottom: 1.25rem;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .optionGroup .optionLabel {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 650;
+  color: #4A2F1E;
+  margin-bottom: 0.75rem;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .optionGroup .textInput {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(74, 47, 30, 0.22);
+  padding: 0.85rem 1rem;
+  font-size: 1.1rem;
+  color: #4A2F1E;
+  background: #fff;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .optionGroup .textInput:focus-visible {
+  outline: 2px solid #D8B46A;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .optionGroup .textInput.isInvalid {
+  border: 2px solid #B54A2F;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .optionGroup .fieldError {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #B54A2F;
+  font-weight: 600;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelActions {
+  text-align: center;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelActions button {
+  border-radius: 999px;
+  padding: 0.8rem 1.45rem;
+  font-weight: 650;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelActions .modalPrimary {
+  background: #B54A2F;
+  color: #fff;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelActions .modalPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(181, 74, 47, 0.35);
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelActions .modalPrimary:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(74, 47, 30, 0.18);
+  background: rgba(243, 236, 220, 0.55);
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmText {
+  color: #4A2F1E;
+  font-size: 1.2rem;
+  font-weight: 650;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmActions button {
+  border-radius: 999px;
+  padding: 0.8rem 1.45rem;
+  font-weight: 650;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmActions .modalPrimary {
+  background: #B54A2F;
+  color: #fff;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmActions .modalPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(181, 74, 47, 0.35);
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmActions .modalPrimary:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmActions .modalSecondary {
+  background: #fcfcfc;
+  color: #4A2F1E;
+  border: 1px solid rgba(74, 47, 30, 0.22);
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmActions .modalSecondary:hover {
+  transform: translateY(-2px);
+  border-color: #D8B46A;
+  box-shadow: 0 10px 22px rgba(74, 47, 30, 0.12);
+}
+.homeBody .cancelModal .cancelCard .cancelBody .cancelConfirmBox .cancelConfirmActions .modalSecondary:focus-visible {
+  outline: 2px solid #D8B46A;
+  outline-offset: 2px;
+}
+.homeBody .cancelModal .cancelCard .cancelBody.isConfirming .cancelSubmitBtn {
+  display: none;
+}
+.homeBody .cancelModal .cancelCard .cancelBody.isConfirming .cancelConfirmBox {
+  display: block;
+}
+.homeBody .cancelModal .cancelCard .cancelBody.isConfirming #cancelEmail,
+.homeBody .cancelModal .cancelCard .cancelBody.isConfirming #cancelOrderId {
+  opacity: 0.65;
+  pointer-events: none;
+}
+.homeBody .snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(16px);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(74, 47, 30, 0.95);
+  color: #F3ECDC;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 650;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 2000;
+}
+.homeBody .snackbar.isOpen {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media screen and (max-width: 1024px) {
+  .homeBody {
+    /* =====================
+       Product section (tablet)
+       ===================== */
+  }
+  .homeBody .header {
+    padding: 2rem 6rem 2rem 3.5rem;
+    position: relative;
+    /* drawer (hidden by default) */
+    /* backdrop behind drawer */
+    /* when menu open */
+  }
+  .homeBody .header .headerLogo {
+    width: 8rem;
+    height: 8rem;
+  }
+  .homeBody .header .header-nav-desktop {
+    display: none;
+  }
+  .homeBody .header .burgerBtn {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 0;
+    gap: 0.75rem;
+  }
+  .homeBody .header .burgerBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .homeBody .header .burgerBtn:focus {
+    outline: none;
+  }
+  .homeBody .header .burgerBtn:focus-visible {
+    outline: 2px solid #D8B46A;
+    outline-offset: 3px;
+  }
+  .homeBody .header .burgerBtn .burgerLine {
+    display: block;
+    width: 64px;
+    height: 6px;
+    background: #F3ECDC;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .homeBody .header .header-nav-mobile {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 1.25rem;
+    left: 1.25rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1500;
+  }
+  .homeBody .header .header-nav-mobile .header-link,
+  .homeBody .header .header-nav-mobile .header-link:visited {
+    color: #4A2F1E;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.85rem 0.9rem;
+    border-radius: 12px;
+  }
+  .homeBody .header .header-nav-mobile .header-link.active {
+    background: rgba(216, 180, 106, 0.22);
+    color: #4A2F1E;
+  }
+  .homeBody .header .mobileNavBackdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1400;
+  }
+  .homeBody .header.isMenuOpen {
+    /* X animation */
+  }
+  .homeBody .header.isMenuOpen .header-nav-mobile {
+    display: flex;
+  }
+  .homeBody .header.isMenuOpen .mobileNavBackdrop {
+    display: block;
+  }
+  .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(1) {
+    transform: translateY(25px) rotate(45deg);
+    width: 56px;
+  }
+  .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(2) {
+    opacity: 0;
+  }
+  .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(3) {
+    transform: translateY(-25px) rotate(-45deg);
+    width: 56px;
+  }
+  .homeBody .productSection {
+    padding: 2rem 1.5rem;
+  }
+  .homeBody .productSection .merchHeaderRow .merchTitle {
+    font-size: 3.5rem;
+  }
+  .homeBody .productSection .deadlineRow {
+    max-width: 360px;
+    font-size: 1.6rem;
+    font-weight: 550;
+    padding: 1.1rem 0.75rem;
+    margin-bottom: 3rem;
+  }
+  .homeBody .productSection .productGrid {
+    gap: 2.5rem;
+  }
+  .homeBody .productSection .productGrid .productCard {
+    width: 360px;
+  }
+  .homeBody .productSection .productGrid .productCard .productImage img {
+    height: 300px;
+  }
+  .homeBody .productSection .productGrid .productCard .productInfo .productName {
+    font-size: 2rem;
+  }
+  .homeBody .productSection .productGrid .productCard .productInfo .productPrice {
+    font-size: 2rem;
+  }
+  .homeBody .productSection .productGrid .productCard .productInfo .orderButton {
+    font-size: 1.5rem;
+    padding: 0.9rem 1rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .homeBody .modalOverlay {
+    padding: 1.25rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .homeBody .modalOverlay .modalCard {
+    width: min(720px, 96vw);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .homeBody .modalOverlay .modalSplit {
+    /* override desktop split */
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* allow children to scroll */
+    height: 100%; /* so left/right can use % heights */
+  }
+  .homeBody .modalOverlay .modalClose {
+    width: 42px;
+    height: 42px;
+    font-size: 1.65rem;
+    top: 12px;
+    right: 12px;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft,
+  .homeBody .modalOverlay .modalSplit .modalRight {
+    flex: 0 0 auto; /* kill desktop 50/50 */
+    width: 100%;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft {
+    /* IMPORTANT: don't center content for tablet */
+    align-items: stretch;
+    justify-content: stretch;
+    /* give the left side a real height */
+    height: clamp(280px, 38vh, 440px);
+    min-height: 280px;
+    padding: 0;
+    position: relative;
+    background: #F3ECDC;
+    /* make the slider fill left */
+    /* ensure viewport is the full height box */
+    /* absolute images need a real box */
+    /* dots should anchor to the bottom of the slider */
+    /* optional: slightly bigger dots for tablet */
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .modalSlider {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderViewport {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderDots {
+    bottom: 20px;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .dot {
+    width: 16px;
+    height: 16px;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderNav {
+    width: 64px;
+    height: 64px;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderNav .chev {
+    transform: scale(1.5);
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 1.25rem 1.75rem 1.25rem;
+    background: #fff;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalInfo {
+    display: flex;
+    justify-content: space-between;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalInfo .modalTitle {
+    font-size: 2.65rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalInfo .modalPrice {
+    font-size: 2.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc {
+    font-size: 2rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroups {
+    display: flex;
+    gap: 4rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroups .optionGroup .optionLabel {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroups .optionGroup .sizeOptions .sizeOption {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroups .optionGroup .quantityPicker {
+    gap: 2rem;
+    padding: 0.75rem 1.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroups .optionGroup .quantityPicker .qtyBtn {
+    width: 56px;
+    height: 56px;
+    font-size: 2rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroups .optionGroup .quantityPicker .qtyValue {
+    font-size: 2rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions button {
+    font-size: 1.75rem;
+    padding: 1rem 1.75rem;
+    width: auto;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalTitle.contactTitle {
+    font-size: 2.65rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="2"].isActive .optionGroup .optionLabel {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="2"].isActive .optionGroup .textInput {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="2"].isActive .optionGroup .fieldError {
+    margin-top: 0.75rem;
+    font-size: 1.4rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="2"].isActive .emailText {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox {
+    margin: 1.5rem 0;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox .summaryTitle {
+    font-size: 1.75rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox .summaryRow {
+    padding: 1rem 0;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox .summaryRow .summaryLabel {
+    font-size: 1.7rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .summaryBox .summaryRow .summaryValue {
+    font-size: 1.7rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive {
+    margin: 2rem 0;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalTitle {
+    font-size: 3rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .receivalText {
+    font-size: 2rem;
+    max-width: 450px;
+  }
+}
+/* ---------- <= 768px (phone / small tablet) ---------- */
+@media screen and (max-width: 768px) {
+  /* ===== Header -> Burger + Drawer ===== */
+  .homeBody .header {
+    padding: 1.5rem 2.5rem;
+    position: relative;
+  }
+  .homeBody .comingSoon {
+    font-size: 3rem;
+  }
+  .homeBody .header .headerLogo {
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+  /* Hide desktop nav */
+  .homeBody .header .header-nav-desktop {
+    display: none;
+  }
+  /* Show burger */
+  .homeBody .header .burgerBtn {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    /* remove the “circle” look by default */
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 0;
+  }
+  /* only show a subtle background on hover/focus */
+  .homeBody .header .burgerBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .homeBody .header .burgerBtn:focus {
+    outline: none;
+  }
+  .homeBody .header .burgerBtn:focus-visible {
+    outline: 2px solid #D8B46A; /* gold */
+    outline-offset: 3px;
+  }
+  .homeBody .header .burgerBtn .burgerLine {
+    display: block;
+    width: 36px;
+    height: 4px;
+    background: #F3ECDC;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .homeBody .header .burgerBtn {
+    gap: 5px;
+  }
+  /* Drawer (hidden by default) */
+  .homeBody .header .header-nav-mobile {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 1.25rem;
+    left: 1.25rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1500;
+  }
+  .homeBody .header .header-nav-mobile .header-link,
+  .homeBody .header .header-nav-mobile .header-link:visited {
+    color: #4A2F1E;
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 700;
+    padding: 0.85rem 0.9rem;
+    border-radius: 12px;
+  }
+  .homeBody .header .header-nav-mobile .header-link.active {
+    background: rgba(216, 180, 106, 0.22);
+    color: #4A2F1E;
+  }
+  /* Backdrop behind drawer */
+  .homeBody .header .mobileNavBackdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1400;
+  }
+  /* When header has menu open */
+  .homeBody .header.isMenuOpen .header-nav-mobile {
+    display: flex;
+  }
+  .homeBody .header.isMenuOpen .mobileNavBackdrop {
+    display: block;
+  }
+  /* Nice "X" animation (optional but clean) */
+  .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(1) {
+    transform: translateY(16px) rotate(45deg);
+    width: 40px;
+  }
+  .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(2) {
+    opacity: 0;
+  }
+  .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(3) {
+    transform: translateY(-16px) rotate(-45deg);
+    width: 40px;
+  }
+  .homeBody .header .burgerBtn .burgerLine {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  /* ===== Product section ===== */
+  .homeBody .productSection {
+    padding: 1.5rem 1rem;
+  }
+  .homeBody .productSection .merchHeaderRow .merchTitle {
+    font-size: 2.75rem;
+  }
+  .homeBody .productSection .deadlineRow {
+    font-size: 1.35rem;
+    padding: 0.85rem 0.75rem;
+    margin: 0 auto 2rem;
+    max-width: 85vw;
+    font-weight: 550;
+  }
+  /* Make cards full-width on phone */
+  .homeBody .productSection .productGrid {
+    gap: 1.25rem;
+  }
+  .homeBody .productSection .productGrid .productCard {
+    width: min(370px, 95%);
+  }
+  .homeBody .productSection .productGrid .productCard .productImage img {
+    height: 250px;
+  }
+  .homeBody .productSection .productGrid .productCard .productInfo .productName {
+    font-size: 2rem;
+  }
+  .homeBody .productSection .productGrid .productCard .productInfo .productPrice {
+    font-size: 2.1rem;
+  }
+  .homeBody .productSection .productGrid .productCard .productInfo .orderButton {
+    font-size: 1.5rem;
+    padding: 0.9rem;
+  }
+  /* ===== Modal (<=768): FULL SCREEN stacked (image top, content bottom) ===== */
+  .homeBody .modalOverlay {
+    padding: 0;
+    align-items: stretch; /* full height */
+  }
+  .homeBody .modalOverlay .modalCard {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  /* stack image then content */
+  .homeBody .modalOverlay .modalSplit {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* enables internal scrolling */
+  }
+  .homeBody .modalOverlay .modalLeft,
+  .homeBody .modalOverlay .modalRight {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  /* --- Image/Gallery area --- */
+  .homeBody .modalOverlay .modalLeft {
+    background: #F3ECDC;
+    padding: 0; /* full bleed image area */
+    position: relative;
+    max-height: 40vh; /* responsive gallery height */
+    min-height: 280px; /* prevents tiny gallery */
+  }
+  /* IMPORTANT: give the slider a REAL height so absolute images show */
+  .homeBody .modalOverlay .modalSplit .modalLeft .modalSlider {
+    height: 100%;
+    width: 100%;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderViewport {
+    height: 100%;
+    width: 100%;
+    border-radius: 0; /* full bleed on phone */
+  }
+  /* keep slider arrows/dots usable */
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderNav {
+    width: 46px;
+    height: 46px;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderDots {
+    bottom: 18px;
+    gap: 0.6rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalLeft .sliderDots .dot {
+    width: 12px;
+    height: 12px;
+  }
+  /* --- Content area --- */
+  .homeBody .modalOverlay .modalSplit .modalRight {
+    flex: 1;
+    min-height: 50vh;
+    overflow: auto; /* scroll the form area */
+    padding: 1rem 1.4rem 1.25rem;
+    background: #fff;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalTitle {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalTitle.contactTitle {
+    font-size: 2rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalPrice {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup .optionLabel {
+    margin-bottom: 0;
+    font-size: 1.65rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions {
+    gap: 0.8rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions .sizeOption {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.3rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker {
+    gap: 1.75rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyBtn {
+    font-size: 2rem;
+    width: 44px;
+    height: 44px;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyValue {
+    font-size: 1.65rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions {
+    margin-top: 1.25rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions button {
+    font-size: 1.5rem;
+    padding: 1rem 1.45rem;
+  }
+  /* buttons stack */
+  .homeBody .modalOverlay .modalRight .modalActions button {
+    width: 100%;
+    justify-content: center;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="2"].isActive .optionGroup {
+    margin-bottom: 1rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .optionLabel {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .emailText {
+    font-size: 1.4rem;
+    margin-bottom: 0rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .fieldError {
+    font-size: 1.2rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow {
+    padding: 0.65rem 0;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow .summaryLabel {
+    font-size: 1.3rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow .summaryValue {
+    font-size: 1.3rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalTitle {
+    font-size: 2.75rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .receivalText {
+    font-size: 2rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalActions button {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
