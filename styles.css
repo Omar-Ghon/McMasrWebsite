@@ -1275,7 +1275,7 @@
     background: #F3ECDC;
     padding: 0; /* full bleed image area */
     position: relative;
-    max-height: 35vh; /* responsive gallery height */
+    max-height: 30vh; /* responsive gallery height */
     min-height: 280px; /* prevents tiny gallery */
   }
   /* IMPORTANT: give the slider a REAL height so absolute images show */
@@ -1313,7 +1313,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalTitle {
     font-size: 1.6rem;
@@ -1361,6 +1361,7 @@
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions {
     margin-top: 0.5rem;
+    gap: 0.6rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions button {
     font-size: 1.25rem;
