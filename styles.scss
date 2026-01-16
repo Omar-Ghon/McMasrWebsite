@@ -1587,8 +1587,8 @@ $strongGold: #dd9104;
   background: #F3ECDC;
   padding: 0; /* full bleed image area */
   position: relative;
-  max-height: 30vh;      /* responsive gallery height */
-  min-height: 280px; /* prevents tiny gallery */
+  max-height: 28vh;      /* responsive gallery height */
+  min-height: 250px; /* prevents tiny gallery */
 }
 
 /* IMPORTANT: give the slider a REAL height so absolute images show */
