@@ -1660,6 +1660,7 @@ $strongGold: #dd9104;
     justify-content: space-between;
     align-items: center;
     margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup .optionLabel {
@@ -1731,8 +1732,8 @@ $strongGold: #dd9104;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .fieldError {
-    font-size: 1rem;
-    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow {
