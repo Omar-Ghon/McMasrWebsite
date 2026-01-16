@@ -1647,10 +1647,11 @@ $strongGold: #dd9104;
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalInfo .modalPrice {
     font-size: 1.6rem;
+    margin-bottom: 0.5rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
 
@@ -1658,12 +1659,12 @@ $strongGold: #dd9104;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup .optionLabel {
     margin-bottom: 0;
-    font-size: 1.45rem;
+    font-size: 1.35rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions {
@@ -1682,17 +1683,17 @@ $strongGold: #dd9104;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyBtn {
-    font-size: 1.7rem; 
-    width: 44px;
-    height: 44px;
+    font-size: 1.5rem; 
+    width: 36px;
+    height: 36px;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker .qtyValue {
-    font-size: 1.4rem; 
+    font-size: 1.25rem; 
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions button {
