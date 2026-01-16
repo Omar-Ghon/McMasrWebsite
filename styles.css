@@ -1392,14 +1392,25 @@
     font-size: 0.9rem;
     margin-top: 0.3rem;
   }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.8rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryTitle {
+    margin-bottom: 0.25rem;
+    font-size: 1.05rem;
+  }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow {
-    padding: 0.65rem 0;
+    padding: 0.55rem 0;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow .summaryLabel {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryRow .summaryValue {
-    font-size: 1.3rem;
+    font-size: 1rem;
+  }
+  .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="3"].isActive .modalTitle {
+    font-size: 1.6rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalTitle {
     font-size: 2.75rem;
