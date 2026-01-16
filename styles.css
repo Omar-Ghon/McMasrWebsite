@@ -1294,12 +1294,12 @@
     height: 44px;
   }
   .homeBody .modalOverlay .modalSplit .modalLeft .sliderDots {
-    bottom: 18px;
-    gap: 0.6rem;
+    bottom: 14px;
+    gap: 0.5rem;
   }
   .homeBody .modalOverlay .modalSplit .modalLeft .sliderDots .dot {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
   }
   /* --- Content area --- */
   .homeBody .modalOverlay .modalSplit .modalRight {
@@ -1393,7 +1393,7 @@
     margin-top: 0.3rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox {
-    margin-top: 0.75rem 0 1rem;
+    margin: 0.75rem 0 1rem;
     padding: 0.5rem 0.8rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .summaryBox .summaryTitle {
@@ -1413,12 +1413,12 @@
     font-size: 1.6rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalTitle {
-    font-size: 2.75rem;
+    font-size: 2.1rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .receivalText {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalActions button {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }/*# sourceMappingURL=styles.css.map */
