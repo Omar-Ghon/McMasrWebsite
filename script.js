@@ -1,6 +1,6 @@
 console.log("script loaded");
 
-const ORDER_API_URL = "https://script.google.com/macros/s/AKfycbwvoT6aQFMHuiuIJKnCLrPbT5SQan55fsbYhqRXaMr-E2DMQxNdyUjmy93sfd4sPQyO/exec";
+const ORDER_API_URL = "https://script.google.com/macros/s/AKfycbxxzhXBFXEjYgMzaIF49SEsXMhGuvw8GPb3g3dwvGDgRYC5LGNR0utwhEkKWSsy_RY9/exec";
 
 function setMenuOpen(isOpen) {
   const header = document.querySelector(".header");
