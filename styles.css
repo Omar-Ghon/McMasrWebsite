@@ -24,8 +24,8 @@
   padding: 1.5rem 10rem 1.5rem 8rem;
 }
 .homeBody .header .headerLogo {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -56,7 +56,7 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -0.6rem;
+  bottom: -0.2rem;
   width: 100%;
   height: 2px;
   background-color: #D8B46A;
