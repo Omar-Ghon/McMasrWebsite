@@ -452,6 +452,11 @@ $strongGold: #dd9104;
                         animation: fadeInUp 0.4s ease-out;
                     }
 
+                    .sizeReference {
+                      font-size: 1rem;
+                      margin: 0.5rem 0 1rem;
+                    }
+
                     .optionGroup {
                         margin-bottom: 0.75rem;
 
@@ -460,7 +465,7 @@ $strongGold: #dd9104;
                             font-size: 1.3rem;
                             font-weight: 650;
                             color: $brown;
-                            margin-bottom: 0.75rem;
+                            margin-bottom: 0.5rem;
                         }
 
                         .sizeOptions {
@@ -473,7 +478,7 @@ $strongGold: #dd9104;
                                 background: #fff;
                                 color: $brown;
                                 border-radius: 999px;
-                                padding: 0.65rem 1.25rem;
+                                padding: 0.55rem 1rem;
                                 font-weight: 650;
                                 font-size: 0.9rem;
                                 cursor: pointer;
@@ -625,14 +630,14 @@ $strongGold: #dd9104;
 
                 .modalPrice {
                     color: $strongGold;
-                    font-size: 1.75rem;
+                    font-size: 1.65rem;
                     font-weight: 600;
-                    margin-bottom: 1.25rem;
+                    margin-bottom: 0.75rem;
                 }
 
                 .modalDesc {
-                    font-size: 1.35rem;
-                    margin-bottom: 1rem;
+                    font-size: 1.25rem;
+                    margin-bottom: 0.75rem;
                     line-height: 1.3;
 
                     .modalLink {
@@ -663,7 +668,7 @@ $strongGold: #dd9104;
 
                     button {
                         border-radius: 999px;
-                        padding: 0.8rem 1.45rem;
+                        padding: 0.75rem 1.25rem;
                         font-weight: 650;
                         cursor: pointer;
                         border: none;
@@ -1066,9 +1071,6 @@ $strongGold: #dd9104;
       }
     }
 
-    /* =====================
-       Product section (tablet)
-       ===================== */
     .productSection {
       padding: 2rem 1.5rem;
 
@@ -1651,7 +1653,7 @@ $strongGold: #dd9104;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-bottom: 0.5rem;
 }
 
@@ -1681,8 +1683,8 @@ $strongGold: #dd9104;
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .sizeOptions .sizeOption {
     margin-bottom: 0;
-    font-size: 1.1rem;
-    padding: 0.55rem 1rem;
+    font-size: 1rem;
+    padding: 0.5rem 0.95rem;
 }
 
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .quantityPicker {
