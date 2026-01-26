@@ -1657,6 +1657,10 @@ $strongGold: #dd9104;
     margin-bottom: 0.5rem;
 }
 
+.homeBody .modalOverlay .modalSplit .modalRight .modalStep .sizeReference {
+    font-size: 0.9rem;
+}
+
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup {
     display: flex;
     justify-content: space-between;
