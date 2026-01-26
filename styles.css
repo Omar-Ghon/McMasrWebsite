@@ -378,7 +378,7 @@
   animation: fadeInUp 0.4s ease-out;
 }
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .optionGroup .optionLabel {
   display: block;
@@ -527,7 +527,7 @@
   margin-bottom: 1.25rem;
 }
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalDesc {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
@@ -551,7 +551,7 @@
   display: flex;
   gap: 1.1rem;
   flex-wrap: wrap;
-  margin-top: 1.75rem;
+  margin-top: 1rem;
 }
 .homeBody .modalOverlay .modalSplit .modalRight .modalStep .modalActions button {
   border-radius: 999px;
