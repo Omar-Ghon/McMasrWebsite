@@ -21,7 +21,7 @@
   justify-content: space-between;
   align-items: center;
   background: #4A2F1E;
-  padding: 1.5rem 10rem 1.5rem 8rem;
+  padding: 1.5rem 7rem 1.5rem 6rem;
 }
 .homeBody .header .headerLogo {
   width: 6rem;
@@ -31,7 +31,7 @@
 }
 .homeBody .header .header-nav-desktop {
   display: flex;
-  gap: 6rem;
+  gap: 5.5rem;
   font-size: 1.75rem;
   /* Hover */
   /* Active page */
@@ -780,15 +780,15 @@
 
 @media screen and (max-width: 1024px) {
   .homeBody .header {
-    padding: 2rem 6rem 2rem 3.5rem;
+    padding: 1.5rem 5rem 1.5rem 5rem;
     position: relative;
     /* drawer (hidden by default) */
     /* backdrop behind drawer */
     /* when menu open */
   }
   .homeBody .header .headerLogo {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
   }
   .homeBody .header .header-nav-desktop {
     display: none;
@@ -803,7 +803,6 @@
     border-radius: 12px;
     cursor: pointer;
     padding: 0;
-    gap: 0.75rem;
   }
   .homeBody .header .burgerBtn:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -818,7 +817,7 @@
   .homeBody .header .burgerBtn .burgerLine {
     display: block;
     width: 64px;
-    height: 6px;
+    height: 4px;
     background: #F3ECDC;
     border-radius: 2px;
     transform-origin: center;
@@ -832,7 +831,7 @@
     display: none;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
     border-radius: 14px;
     background: #fff;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
@@ -845,10 +844,16 @@
     font-size: 2rem;
     font-weight: 700;
     padding: 0.85rem 0.9rem;
-    border-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-bottom: 2px solid rgba(216, 180, 106, 0.25);
+  }
+  .homeBody .header .header-nav-mobile .header-link:last-child,
+  .homeBody .header .header-nav-mobile .header-link:visited:last-child {
+    border-bottom: none;
   }
   .homeBody .header .header-nav-mobile .header-link.active {
-    background: rgba(216, 180, 106, 0.22);
+    background: rgba(216, 180, 106, 0.15);
     color: #4A2F1E;
   }
   .homeBody .header .mobileNavBackdrop {
@@ -868,14 +873,14 @@
     display: block;
   }
   .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(1) {
-    transform: translateY(25px) rotate(45deg);
+    transform: translateY(21px) rotate(45deg);
     width: 56px;
   }
   .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(2) {
     opacity: 0;
   }
   .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(3) {
-    transform: translateY(-25px) rotate(-45deg);
+    transform: translateY(-21px) rotate(-45deg);
     width: 56px;
   }
   .homeBody .productSection {
@@ -1141,7 +1146,7 @@
   }
   .homeBody .header .burgerBtn .burgerLine {
     display: block;
-    width: 36px;
+    width: 40px;
     height: 4px;
     background: #F3ECDC;
     border-radius: 2px;
@@ -1173,10 +1178,11 @@
     font-size: 1.5rem;
     font-weight: 700;
     padding: 0.85rem 0.9rem;
-    border-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
   }
   .homeBody .header .header-nav-mobile .header-link.active {
-    background: rgba(216, 180, 106, 0.22);
+    background: rgba(216, 180, 106, 0.15);
     color: #4A2F1E;
   }
   /* Backdrop behind drawer */
@@ -1196,14 +1202,14 @@
   }
   /* Nice "X" animation (optional but clean) */
   .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(1) {
-    transform: translateY(16px) rotate(45deg);
+    transform: translateY(17px) rotate(45deg);
     width: 40px;
   }
   .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(2) {
     opacity: 0;
   }
   .homeBody .header.isMenuOpen .burgerBtn .burgerLine:nth-child(3) {
-    transform: translateY(-16px) rotate(-45deg);
+    transform: translateY(-17px) rotate(-45deg);
     width: 40px;
   }
   .homeBody .header .burgerBtn .burgerLine {
@@ -1572,9 +1578,9 @@
 .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote::after {
   content: "“";
   position: absolute;
-  top: -14px;
-  right: 8px;
-  font-size: 3.5rem;
+  top: -16px;
+  right: 6px;
+  font-size: 3rem;
   font-weight: 900;
   line-height: 1;
   color: rgba(216, 180, 106, 0.5);
@@ -1632,8 +1638,264 @@
     margin: 0.5rem 0 1.5rem;
     padding: 0.5rem 0.75rem;
   }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote::after {
+    top: -16px;
+    right: 8px;
+    font-size: 3.5rem;
+  }
   .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote p {
     font-size: 1.3rem;
     padding: 0.25rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .teamPage .teamPageTitle {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
+  .teamPage .teamSection .teamSectionHeader {
+    margin: 1.5rem 1.5rem;
+    gap: 1rem;
+  }
+  .teamPage .teamSection .teamSectionHeader .teamSectionTitle {
+    font-size: 1.9rem;
+  }
+  .teamPage .teamSection .teamSectionHeader .teamSectionRule {
+    height: 3px;
+  }
+  .teamPage .teamSection .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard {
+    max-height: 320px;
+    grid-template-columns: 43% 57%;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardMedia .memberCardAvatar {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody {
+    padding: 1rem 0.8rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardName {
+    font-size: 1.4rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardProgram {
+    font-size: 1.1rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardPill {
+    font-size: 0.9rem;
+    margin: 0.25rem 0 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote::after {
+    top: -16px;
+    right: 8px;
+    font-size: 3.5rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote p {
+    font-size: 1.15rem;
+    padding: 0.25rem;
+  }
+}
+/* CONTACT PAGE */
+.contactPage {
+  background: #F3ECDC;
+  color: #4A2F1E;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.contactPage .contactWrap {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+.contactPage .contactWrap .contactHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.contactPage .contactWrap .contactHeader .contactTitle {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+}
+.contactPage .contactWrap .contactHeader .contactSubtitle {
+  margin: 12px auto 0;
+  max-width: 680px;
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: rgba(74, 47, 30, 0.82);
+}
+.contactPage .contactWrap .contactHeader .contactRule {
+  width: 140px;
+  height: 3px;
+  margin: 18px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(216, 180, 106, 0) 0%, #D8B46A 35%, #dd9104 65%, rgba(216, 180, 106, 0) 100%);
+  box-shadow: 0 6px 16px rgba(74, 47, 30, 0.12);
+}
+.contactPage .contactWrap .contactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.contactPage .contactWrap .contactGrid .contactCard {
+  position: relative;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(216, 180, 106, 0.55);
+  box-shadow: 0 16px 40px rgba(74, 47, 30, 0.1), 0 1px 0 rgba(255, 255, 255, 0.65) inset;
+  padding: 18px 18px 16px;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.contactPage .contactWrap .contactGrid .contactCard::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(circle at 20% 10%, rgba(221, 145, 4, 0.18), transparent 55%), radial-gradient(circle at 85% 20%, rgba(181, 74, 47, 0.14), transparent 55%), radial-gradient(circle at 40% 90%, rgba(216, 180, 106, 0.14), transparent 60%);
+  pointer-events: none;
+}
+.contactPage .contactWrap .contactGrid .contactCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(transparent 0, transparent 60%, rgba(216, 180, 106, 0.08) 100%);
+  pointer-events: none;
+}
+.contactPage .contactWrap .contactGrid .contactCard:hover {
+  transform: translateY(-1.5px);
+  border-color: rgba(221, 145, 4, 0.65);
+  box-shadow: 0 18px 52px rgba(74, 47, 30, 0.14), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardTop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardTop::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(216, 180, 106, 0) 0%, rgba(216, 180, 106, 0.85) 30%, rgba(221, 145, 4, 0.85) 70%, rgba(216, 180, 106, 0) 100%);
+  opacity: 0.95;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardTop .contactIcon {
+  height: 2rem;
+  width: 2rem;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardTop .contactCardHeading {
+  flex: 1;
+  min-width: 0;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardTop .contactCardHeading .contactCardTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.2px;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardBody {
+  position: relative;
+  padding: 2px 2px 10px;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardBody .contactValue {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+  color: #4A2F1E;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(216, 180, 106, 0);
+  transition: border-color 160ms ease, color 160ms ease;
+  margin-top: 0.25rem;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardBody .contactValue:hover {
+  color: #B54A2F;
+  text-decoration: underline;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions .btnPrimary,
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions .btnGhost {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.75rem 0.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 160ms ease, filter 160ms ease, background 160ms ease, border-color 160ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions .btnPrimary {
+  flex: 1;
+  background: linear-gradient(135deg, #dd9104, #D8B46A);
+  color: #4A2F1E;
+  box-shadow: 0 10px 22px rgba(74, 47, 30, 0.14);
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions .btnPrimary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions .btnPrimary:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions .btnGhost {
+  min-width: 96px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #4A2F1E;
+  border: 1px solid rgba(216, 180, 106, 0.8);
+  box-shadow: 0 10px 18px rgba(74, 47, 30, 0.1);
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions .btnGhost:hover {
+  border-color: rgba(221, 145, 4, 0.9);
+  filter: brightness(1.02);
+}
+.contactPage .contactWrap .contactGrid .contactCard .contactCardActions .btnGhost:active {
+  filter: brightness(0.98);
+}
+
+@media screen and (max-width: 1024px) {
+  .contactPage .contactWrap .contactGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .contactPage {
+    margin-top: 2.5rem;
+  }
+  .contactPage .contactWrap .contactHeader .contactTitle {
+    font-size: 2.15rem;
+  }
+  .contactPage .contactWrap .contactHeader .contactSubtitle {
+    font-size: 1.15rem;
+  }
+  .contactPage .contactWrap .contactGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contactPage .contactWrap .contactGrid .contactCard .contactCardTop .contactCardHeading .contactCardTitle {
+    font-size: 1.3rem;
   }
 }/*# sourceMappingURL=styles.css.map */

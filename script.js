@@ -633,3 +633,17 @@ document.addEventListener("keydown", async (e) => {
     await advanceFromActiveStep(modal);
   }
 });
+
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const value = btn.getAttribute("data-copy");
+      try {
+        await navigator.clipboard.writeText(value);
+        const old = btn.textContent;
+        btn.textContent = "Copied!";
+        setTimeout(() => (btn.textContent = old), 900);
+      } catch (e) {
+        window.prompt("Copy this:", value);
+      }
+    });
+  });

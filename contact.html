@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>McMasr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+</head>
+
+<body class="homeBody">
+
+<header class="header">
+  <img class="headerLogo" src="assets/icons/favicon.ico" alt="Icon">
+
+  <nav class="header-nav-desktop" aria-label="Primary">
+    <a class="header-link" href="index.html">Home</a>
+    <a class="header-link" href="past-events.html">Past Events</a>
+    <a class="header-link" href="team.html">Team</a>
+    <a class="header-link" href="merch.html">Merch</a>
+    <a class="header-link active" href="contact.html">Contact</a>
+  </nav>
+
+  <button class="burgerBtn" type="button"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="mobileNav">
+    <span class="burgerLine"></span>
+    <span class="burgerLine"></span>
+    <span class="burgerLine"></span>
+  </button>
+
+  <nav class="header-nav-mobile" id="mobileNav" aria-label="Mobile" aria-hidden="true">
+    <a class="header-link" href="index.html">Home</a>
+    <a class="header-link" href="past-events.html">Past Events</a>
+    <a class="header-link" href="team.html">Team</a>
+    <a class="header-link" href="merch.html">Merch</a>
+    <a class="header-link active" href="contact.html">Contact</a>
+  </nav>
+
+  <div class="mobileNavBackdrop" aria-hidden="true"></div>
+</header>
+
+<section class="contactPage">
+  <div class="contactWrap">
+    <header class="contactHeader">
+      <h1 class="contactTitle">Contact McMasr</h1>
+      <p class="contactSubtitle">
+        Questions, collabs, sponsorships, or joining the community - reach out anytime.
+      </p>
+      <div class="contactRule"></div>
+    </header>
+
+    <div class="contactGrid">
+
+      <!-- Email -->
+      <article class="contactCard">
+        <div class="contactCardTop">
+        <img class="contactIcon" src="assets/icons/favicon.ico" alt="Email Icon">
+
+          <div class="contactCardHeading">
+            <h2 class="contactCardTitle">Email</h2>
+          </div>
+        </div>
+
+        <div class="contactCardBody">
+          <a class="contactValue" href="mailto:mcmasr@mcmaster.ca">mcmasr@mcmaster.ca</a>
+        </div>
+
+        <div class="contactCardActions">
+          <a class="btnPrimary" href="mailto:mcmasr@mcmaster.ca">Email us</a>
+          <button class="btnGhost" type="button" data-copy="mcmasr@mcmaster.ca">
+            Copy
+          </button>
+        </div>
+      </article>
+
+      <!-- Instagram -->
+      <article class="contactCard">
+        <div class="contactCardTop">
+        <img class="contactIcon" src="assets/icons/instagram.svg" alt="Instagram icon">
+
+          <div class="contactCardHeading">
+            <h2 class="contactCardTitle">Instagram</h2>
+          </div>
+        </div>
+
+        <div class="contactCardBody">
+          <a class="contactValue" href="https://instagram.com/mcmasr_" target="_blank" rel="noopener">
+            @mcmasr_
+          </a>
+        </div>
+
+        <div class="contactCardActions">
+          <a class="btnPrimary" href="https://instagram.com/mcmasr_" target="_blank" rel="noopener">
+            Open our Instagram
+          </a>
+          <button class="btnGhost" type="button" data-copy="@mcmasr">
+            Copy
+          </button>
+        </div>
+      </article>
+
+      <!-- TikTok -->
+      <article class="contactCard">
+        <div class="contactCardTop">
+          <img class="contactIcon" src="assets/icons/tiktok.png" alt="Tiktok Icon">
+
+          <div class="contactCardHeading">
+            <h2 class="contactCardTitle">TikTok</h2>
+          </div>
+        </div>
+
+        <div class="contactCardBody">
+          <a class="contactValue" href="https://www.tiktok.com/@mcmasr_" target="_blank" rel="noopener">
+            @mcmasr_
+          </a>
+        </div>
+
+        <div class="contactCardActions">
+          <a class="btnPrimary" href="https://www.tiktok.com/@mcmasr_" target="_blank" rel="noopener">
+            Open our TikTok
+          </a>
+          <button class="btnGhost" type="button" data-copy="@mcmasr">
+            Copy
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<script src="script.js"></script>
+</body>
+</html>
