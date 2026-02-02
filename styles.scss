@@ -1958,12 +1958,12 @@ $strongGold: #dd9104;
             &::after {
               content: "“";
               position: absolute;
-              top: -16px;
+              top: -14px;
               right: 8px;
-              font-size: 44px;
+              font-size: 3.5rem;
               font-weight: 900;
               line-height: 1;
-              color: rgba($gold, 0.35);
+              color: rgba($gold, 0.5);
               pointer-events: none;
             }
 

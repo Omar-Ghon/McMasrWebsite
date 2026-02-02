@@ -1572,12 +1572,12 @@
 .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote::after {
   content: "“";
   position: absolute;
-  top: -16px;
+  top: -14px;
   right: 8px;
-  font-size: 44px;
+  font-size: 3.5rem;
   font-weight: 900;
   line-height: 1;
-  color: rgba(216, 180, 106, 0.35);
+  color: rgba(216, 180, 106, 0.5);
   pointer-events: none;
 }
 .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote p {
