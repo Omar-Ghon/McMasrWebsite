@@ -49,14 +49,13 @@
   transform: translateY(-2px);
 }
 .homeBody .header .header-nav-desktop .header-link.active {
-  color: #D8B46A;
   font-weight: 500;
 }
 .homeBody .header .header-nav-desktop .header-link.active::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -0.2rem;
+  bottom: -0.3rem;
   width: 100%;
   height: 2px;
   background-color: #D8B46A;
@@ -1102,7 +1101,7 @@
 @media screen and (max-width: 768px) {
   /* ===== Header -> Burger + Drawer ===== */
   .homeBody .header {
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 2.5rem;
     position: relative;
   }
   .homeBody .comingSoon {
@@ -1171,7 +1170,7 @@
   .homeBody .header .header-nav-mobile .header-link:visited {
     color: #4A2F1E;
     text-decoration: none;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
     padding: 0.85rem 0.9rem;
     border-radius: 12px;
@@ -1331,6 +1330,7 @@
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep .sizeReference {
     font-size: 0.9rem;
+    font-weight: 600;
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="1"].isActive .optionGroup {
     display: flex;
@@ -1425,5 +1425,215 @@
   }
   .homeBody .modalOverlay .modalSplit .modalRight .modalStep[data-step="4"].isActive .modalActions button {
     font-size: 1.5rem;
+  }
+}
+.teamPage {
+  padding: 1.25rem 1rem 2.25rem;
+  background: transparent;
+}
+.teamPage .teamPageTitle {
+  text-align: center;
+  font-size: 2.15rem;
+  margin: 0.75rem 0 1.75rem;
+  font-weight: 900;
+  color: #4A2F1E;
+  letter-spacing: 0.2px;
+}
+.teamPage .teamSection {
+  margin-bottom: 2.25rem;
+}
+.teamPage .teamSection .teamSectionHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.1rem;
+}
+.teamPage .teamSection .teamSectionHeader .teamSectionTitle {
+  margin: 0;
+  color: #4A2F1E;
+  font-weight: 900;
+  font-size: 1.55rem;
+  letter-spacing: 0.2px;
+}
+.teamPage .teamSection .teamSectionHeader .teamSectionRule {
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(216, 180, 106, 0.9), rgba(221, 145, 4, 0.9), rgba(181, 74, 47, 0.25));
+  opacity: 0.95;
+}
+.teamPage .teamSection .teamGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+.teamPage .teamSection .teamGrid .memberCard {
+  background: #fff;
+  border: 1px solid rgba(74, 47, 30, 0.14);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(74, 47, 30, 0.08);
+  margin: 0.5rem 0.75rem;
+  max-height: 400px;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  align-items: stretch;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+.teamPage .teamSection .teamGrid .memberCard:hover {
+  border-color: rgba(216, 180, 106, 0.55);
+  box-shadow: 0 16px 34px rgba(74, 47, 30, 0.14);
+  transform: translateY(-2px);
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardMedia {
+  position: relative;
+  background: rgba(243, 236, 220, 0.55);
+  border-right: 1px solid rgba(74, 47, 30, 0.1);
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardMedia::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #D8B46A, #dd9104);
+  opacity: 0.95;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardMedia .memberCardAvatar {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody {
+  padding: 0.8rem 0.85rem 0.9rem;
+  position: relative;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(216, 180, 106, 0.9), rgba(221, 145, 4, 0.9));
+  opacity: 0.95;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardName {
+  margin: 0;
+  color: #4A2F1E;
+  font-weight: 900;
+  font-size: 1.2rem;
+  line-height: 1.15;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardPill {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(243, 236, 220, 0.85);
+  border: 1px solid rgba(216, 180, 106, 0.45);
+  color: #4A2F1E;
+  font-weight: 900;
+  font-size: 0.82rem;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  margin-bottom: 1rem;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardPill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #B54A2F;
+  box-shadow: 0 0 0 3px rgba(181, 74, 47, 0.14);
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardProgram {
+  margin: 0.45rem 0 0.65rem;
+  color: rgba(74, 47, 30, 0.72);
+  font-weight: 750;
+  font-size: 0.98rem;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote {
+  margin: 0;
+  padding: 0.55rem 0.65rem;
+  border-radius: 12px;
+  background: rgba(243, 236, 220, 0.55);
+  border: 1px solid rgba(216, 180, 106, 0.28);
+  position: relative;
+  text-align: center;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote::after {
+  content: "“";
+  position: absolute;
+  top: -16px;
+  right: 8px;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(216, 180, 106, 0.35);
+  pointer-events: none;
+}
+.teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote p {
+  margin: 0;
+  color: rgba(74, 47, 30, 0.88);
+  font-weight: 650;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .teamPage .teamPageTitle {
+    font-size: 2.75rem;
+    margin-top: 1.5rem;
+  }
+  .teamPage .teamSection .teamSectionHeader {
+    margin: 1.5rem 1.5rem;
+    gap: 1rem;
+  }
+  .teamPage .teamSection .teamSectionHeader .teamSectionTitle {
+    font-size: 2rem;
+  }
+  .teamPage .teamSection .teamSectionHeader .teamSectionRule {
+    height: 4px;
+  }
+  .teamPage .teamSection .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard {
+    max-height: 300px;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardMedia .memberCardAvatar {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody {
+    padding: 1.25rem 1rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardName {
+    font-size: 1.65rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardProgram {
+    font-size: 1.25rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardPill {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 1.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .teamPage .teamSection .teamGrid .memberCard .memberCardBody .memberCardQuote p {
+    font-size: 1.3rem;
+    padding: 0.25rem;
   }
 }/*# sourceMappingURL=styles.css.map */
