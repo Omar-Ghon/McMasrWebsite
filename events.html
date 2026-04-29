@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>McMasr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
+</head>
+
+<body class="homeBody">
+
+<header class="header transparent">
+  <img class="headerLogo" src="assets/icons/favicon.ico" alt="Icon">
+
+  <nav class="header-nav-desktop" aria-label="Primary">
+    <a class="header-link" href="index.html">Home</a>
+    <a class="header-link active" href="#">Events</a>
+    <a class="header-link" href="team.html">Team</a>
+    <a class="header-link" href="merch.html">Merch</a>
+    <a class="header-link" href="contact.html">Contact</a>
+  </nav>
+
+  <button
+    class="burgerBtn"
+    type="button"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="mobileNav"
+  >
+    <span class="burgerLine"></span>
+    <span class="burgerLine"></span>
+    <span class="burgerLine"></span>
+  </button>
+
+  <nav class="header-nav-mobile" id="mobileNav" aria-label="Mobile" aria-hidden="true">
+    <a class="header-link" href="index.html">Home</a>
+    <a class="header-link active" href="#">Events</a>
+    <a class="header-link" href="team.html">Team</a>
+    <a class="header-link" href="merch.html">Merch</a>
+    <a class="header-link" href="contact.html">Contact</a>
+  </nav>
+
+  <div class="mobileNavBackdrop" aria-hidden="true"></div>
+</header>
+
+<main class="eventsPage">
+  <section class="eventsHero">
+    <img
+      class="eventsHeroImage"
+      src="assets/images/events/event-placeholder.png"
+      alt="McMasr events"
+    />
+
+    <div class="eventsHeroInner">
+      <h1 class="eventsHeroTitle">Events</h1>
+    </div>
+  </section>
+
+  <section class="featuredEventSection">
+    <div class="sectionHeading sectionHeadingCentered">
+      <div class="sectionHeadingRow">
+        <h2 class="sectionTitle">Next Up</h2>
+        <span class="sectionRule"></span>
+      </div>
+    </div>
+
+    <article class="featuredEventCard">
+      <div class="featuredEventImageWrap">
+        <img
+          class="featuredEventImage"
+          src="assets/images/events/event-placeholder.png"
+          alt="Featured McMasr event"
+        />
+        <span class="featuredEventTag">Open Registration</span>
+      </div>
+
+      <div class="featuredEventContent">
+        <div class="featuredEventDateBlock">
+          <span class="featuredEventIcon">
+            <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="featuredEventCalendar">
+          </span>
+          <span class="featuredEventMonth">APRIL</span>
+          <span class="featuredEventDay">12</span>
+        </div>
+
+        <div class="featuredEventInfo">
+          <h3 class="featuredEventTitle">McMasr Spring Night</h3>
+
+          <div class="featuredEventMeta">
+            <span class="featuredEventMetaItem">MUSC 2nd Floor</span>
+            <span class="featuredEventMetaDot"></span>
+            <span class="featuredEventMetaItem">6:30 PM – 10:00 PM</span>
+          </div>
+
+          <p class="featuredEventDescription">
+            An evening of Egyptian music, food, games, and community celebration.
+            Come meet new people, reconnect with friends, and celebrate the semester together.
+          </p>
+
+          <div class="featuredEventActions">
+            <a
+              class="featuredEventBtn"
+              href="https://forms.gle/exampleFeaturedEvent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register Now
+            </a>
+
+            <a class="featuredEventSecondaryLink" href="#">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="upcomingEventsSection">
+    <div class="sectionHeading">
+      <div class="sectionHeadingRow">
+        <h2 class="sectionTitle">What’s Coming Soon</h2>
+        <span class="sectionRule"></span>
+      </div>
+    </div>
+
+    <div class="upcomingEventsGrid">
+      <article class="upcomingEventCard">
+        <div class="upcomingEventImageWrap">
+          <img
+            class="upcomingEventImage"
+            src="assets/images/events/event-placeholder5.png"
+            alt="McMasr game night event"
+          />
+          <span class="upcomingEventStatus">Open</span>
+        </div>
+
+        <div class="upcomingEventBody">
+          <div class="upcomingEventDate">
+            <span class="upcomingEventIcon">
+              <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="upcomingEventCalendar">
+            </span>
+            <span class="upcomingEventMonth">APRIL</span>
+            <span class="upcomingEventDay">20</span>
+          </div>
+
+          <div class="upcomingEventContent">
+            <h3 class="upcomingEventTitle">Games & Kahk Night</h3>
+
+            <div class="upcomingEventMeta">
+              <span>MUSC Lounge</span>
+              <span class="upcomingEventMetaDot"></span>
+              <span>7:00 PM</span>
+            </div>
+
+            <p class="upcomingEventDescription">
+              A cozy social with board games, snacks, and classic Egyptian desserts.
+            </p>
+
+            <a
+              class="upcomingEventBtn"
+              href="https://forms.gle/exampleGamesNight"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="upcomingEventCard">
+        <div class="upcomingEventImageWrap">
+          <img
+            class="upcomingEventImage"
+            src="assets/images/events/event-placeholder2.png"
+            alt="McMasr coffee chat event"
+          />
+          <span class="upcomingEventStatus">Open</span>
+        </div>
+
+        <div class="upcomingEventBody">
+          <div class="upcomingEventDate">
+            <span class="upcomingEventIcon">
+              <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="upcomingEventCalendar">
+            </span>
+            <span class="upcomingEventMonth">MAY</span>
+            <span class="upcomingEventDay">03</span>
+          </div>
+
+          <div class="upcomingEventContent">
+            <h3 class="upcomingEventTitle">Coffee Chat with Alumni</h3>
+
+            <div class="upcomingEventMeta">
+              <span>University Hall</span>
+              <span class="upcomingEventMetaDot"></span>
+              <span>5:30 PM</span>
+            </div>
+
+            <p class="upcomingEventDescription">
+              Meet Egyptian alumni, ask questions, and hear about their university and career journeys.
+            </p>
+
+            <a
+              class="upcomingEventBtn"
+              href="https://forms.gle/exampleCoffeeChat"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="upcomingEventCard">
+        <div class="upcomingEventImageWrap">
+          <img
+            class="upcomingEventImage"
+            src="assets/images/events/event-placeholder3.png"
+            alt="McMasr picnic event"
+          />
+          <span class="upcomingEventStatus">Limited Spots</span>
+        </div>
+
+        <div class="upcomingEventBody">
+          <div class="upcomingEventDate">
+            <span class="upcomingEventIcon">
+              <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="upcomingEventCalendar">
+            </span>
+            <span class="upcomingEventMonth">MAY</span>
+            <span class="upcomingEventDay">18</span>
+          </div>
+
+          <div class="upcomingEventContent">
+            <h3 class="upcomingEventTitle">Spring Picnic Meetup</h3>
+
+            <div class="upcomingEventMeta">
+              <span>Gage Park</span>             
+              <span class="upcomingEventMetaDot"></span>
+              <span>1:00 PM</span>
+
+            </div>
+
+            <p class="upcomingEventDescription">
+              A relaxed outdoor meetup with food, games, and a chance to enjoy the spring weather together.
+            </p>
+
+            <a
+              class="upcomingEventBtn"
+              href="https://forms.gle/examplePicnicMeetup"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pastEventsSection">
+    <div class="sectionHeading">
+      <div class="sectionHeadingRow">
+        <h2 class="sectionTitle">Moments We’ve Shared</h2>
+        <span class="sectionRule"></span>
+      </div>
+    </div>
+
+    <div class="upcomingEventsGrid">
+      <article class="upcomingEventCard pastEventCard">
+        <div class="upcomingEventImageWrap">
+          <img
+            class="upcomingEventImage"
+            src="assets/images/events/event-placeholder4.png"
+            alt="McMasr orientation social"
+          />
+          <span class="upcomingEventStatus">Past Event</span>
+        </div>
+
+        <div class="upcomingEventBody">
+          <div class="upcomingEventDate">
+            <span class="upcomingEventIcon">
+              <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="upcomingEventCalendar">
+            </span>
+            <span class="upcomingEventMonth">SEPTEMBER</span>
+            <span class="upcomingEventDay">22</span>
+          </div>
+
+          <div class="upcomingEventContent">
+            <h3 class="upcomingEventTitle">Welcome Back Social</h3>
+
+            <div class="upcomingEventMeta">
+              <span>Student Centre</span>
+              <span class="upcomingEventMetaDot"></span>
+              <span>McMaster</span>
+            </div>
+
+            <p class="upcomingEventDescription">
+              A community kickoff with games, introductions, and a warm welcome to new members.
+            </p>
+
+            <button
+              class="upcomingEventBtn js-open-gallery"
+              type="button"
+              data-event-title="Welcome Back Social"
+              data-event-date="September 22"
+              data-event-location="JHE Field"
+              data-event-attendees="85 Attendees"
+              data-event-description="Our Welcome Back Social brought students together at the start of the semester for games, introductions, snacks, and a chance to build community. It was a warm and energetic evening where returning members met new faces."
+              data-event-image="assets/images/events/event-placeholder.png"
+              data-event-image-alt="Welcome Back Social gallery image"
+            >
+              View Gallery
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="upcomingEventCard pastEventCard">
+        <div class="upcomingEventImageWrap">
+          <img
+            class="upcomingEventImage"
+            src="assets/images/events/event-placeholder5.png"
+            alt="McMasr Ramadan event"
+          />
+          <span class="upcomingEventStatus">Past Event</span>
+        </div>
+
+        <div class="upcomingEventBody">
+          <div class="upcomingEventDate">
+            <span class="upcomingEventIcon">
+              <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="upcomingEventCalendar">
+            </span>
+            <span class="upcomingEventMonth">MARCH</span>
+            <span class="upcomingEventDay">15</span>
+          </div>
+
+          <div class="upcomingEventContent">
+            <h3 class="upcomingEventTitle">Ramadan Iftar Night</h3>
+
+            <div class="upcomingEventMeta">
+              <span>Evening Gathering</span>
+              <span class="upcomingEventMetaDot"></span>
+              <span>Community Hall</span>
+            </div>
+
+            <p class="upcomingEventDescription">
+              A meaningful evening of reflection, food, and connection during Ramadan.
+            </p>
+
+            <button
+              class="upcomingEventBtn js-open-gallery"
+              type="button"
+              data-event-title="Ramadan Iftar Night"
+              data-event-date="March 15"
+              data-event-location="Community Hall"
+              data-event-attendees="120 Attendees"
+              data-event-description="Ramadan Iftar Night was a meaningful evening centered around community, reflection, and shared meals. Members gathered to break their fast together, reconnect, and enjoy an atmosphere of warmth, gratitude, and belonging."
+              data-event-image="assets/images/events/event-placeholder.png"
+              data-event-image-alt="Ramadan Iftar Night gallery image"
+            >
+              View Gallery
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="upcomingEventCard pastEventCard">
+        <div class="upcomingEventImageWrap">
+          <img
+            class="upcomingEventImage"
+            src="assets/images/events/event-placeholder2.png"
+            alt="McMasr cultural celebration"
+          />
+          <span class="upcomingEventStatus">Past Event</span>
+        </div>
+
+        <div class="upcomingEventBody">
+          <div class="upcomingEventDate">
+            <span class="upcomingEventIcon">
+              <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="upcomingEventCalendar">
+            </span>
+            <span class="upcomingEventMonth">NOVEMBER</span>
+            <span class="upcomingEventDay">09</span>
+          </div>
+
+          <div class="upcomingEventContent">
+            <h3 class="upcomingEventTitle">Cultural Showcase Evening</h3>
+
+            <div class="upcomingEventMeta">
+              <span>Performance Night</span>
+              <span class="upcomingEventMetaDot"></span>
+              <span>Campus Event Space</span>
+            </div>
+
+            <p class="upcomingEventDescription">
+              A lively night featuring performances, traditions, and celebration across the community.
+            </p>
+
+            <button
+              class="upcomingEventBtn js-open-gallery"
+              type="button"
+              data-event-title="Cultural Showcase Evening"
+              data-event-date="November 9"
+              data-event-location="Campus Event Space"
+              data-event-attendees="150 Attendees"
+              data-event-description="The Cultural Showcase Evening featured performances, music, shared traditions, and a vibrant celebration of identity and community. It was one of our most energetic nights, filled with pride, laughter, and memorable moments."
+              data-event-image="assets/images/events/event-placeholder.png"
+              data-event-image-alt="Cultural Showcase Evening gallery image"
+            >
+              View Gallery
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<div class="eventGalleryOverlay" id="eventGalleryOverlay" aria-hidden="true">
+  <div class="eventGalleryBackdrop js-gallery-close"></div>
+
+  <section
+    class="eventGalleryPanel"
+    id="eventGalleryPanel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="eventGalleryTitle"
+  >
+    <div class="eventGalleryHeader"> 
+      <div class="eventGalleryHeaderText">
+        <img class="eventGalleryHeaderIcon" src="assets/icons/community.svg" alt="Community icon">
+        <h2 class="eventGalleryTitle" id="eventGalleryTitle">Event Title</h2>
+      </div>
+
+      <button
+        class="eventGalleryCloseBtn js-gallery-close"
+        type="button"
+        aria-label="Close gallery"
+      >
+        <img src="assets/icons/x.svg" alt="Close" class="eventGalleryCloseImg">
+      </button>
+    </div>
+
+    <div class="eventGalleryBody">
+    <div class="eventGalleryMeta">
+      <div class="eventGalleryMetaCards">
+      <article class="eventGalleryMetaCard">
+        <div class="eventGalleryMetaIconWrap">
+          <img
+            class="eventGalleryMetaIcon"
+            src="assets/icons/calendar-past.svg"
+            alt="Calendar icon"
+          />
+        </div>
+        <!-- <p class="eventGalleryMetaLabel">Date</p> -->
+        <p class="eventGalleryMetaValue" id="eventGalleryDateValue">April 12, 2026</p>
+      </article>
+
+      <article class="eventGalleryMetaCard">
+        <div class="eventGalleryMetaIconWrap">
+          <img
+            class="eventGalleryMetaIcon"
+            src="assets/icons/location.svg"
+            alt="Location icon"
+          />
+        </div>
+        <!-- <p class="eventGalleryMetaLabel">Location</p> -->
+        <p class="eventGalleryMetaValue" id="eventGalleryLocationValue">Student Centre</p>
+      </article>
+
+      <article class="eventGalleryMetaCard">
+        <div class="eventGalleryMetaIconWrap">
+          <img
+            class="eventGalleryMetaIcon"
+            src="assets/icons/community-black.svg"
+            alt="Attendees icon"
+          />
+        </div>
+        <!-- <p class="eventGalleryMetaLabel">Attendees</p> -->
+        <p class="eventGalleryMetaValue" id="eventGalleryAttendeesValue">85 Members</p>
+      </article>
+      </div> 
+    </div>
+    
+
+      <div class="eventGalleryIntro">
+        <h3 class="sectionTitle">Event Description</h3>
+        <p class="eventGalleryDescription" id="eventGalleryDescription">
+          Event description goes here.
+        </p>
+      </div>
+
+    <div class="eventGallery">
+      <h3 class="sectionTitle">Gallery</h3>
+
+      <div class="eventGalleryMain">
+        <div class="swiper eventGalleryMainSwiper">
+          <div class="swiper-wrapper" id="eventGalleryMainWrapper">
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryImage"
+                src="assets/images/events/event-placeholder.png"
+                alt="Event gallery image 1"
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryImage"
+                src="assets/images/events/event-placeholder2.png"
+                alt="Event gallery image 2"
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryImage"
+                src="assets/images/events/event-placeholder3.png"
+                alt="Event gallery image 3"
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryImage"
+                src="assets/images/events/event-placeholder4.png"
+                alt="Event gallery image 4"
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryImage"
+                src="assets/images/events/event-placeholder5.png"
+                alt="Event gallery image 5"
+              />
+            </div>
+          </div>
+
+          <button
+            class="eventGalleryArrow eventGalleryArrowPrev"
+            type="button"
+            aria-label="Previous gallery image"
+          >
+            ‹
+          </button>
+
+          <button
+            class="eventGalleryArrow eventGalleryArrowNext"
+            type="button"
+            aria-label="Next gallery image"
+          >
+            ›
+          </button>
+
+          <div class="eventGalleryPagination"></div>
+        </div>
+      </div>
+
+      <div class="eventGalleryThumbsWrap">
+        <div class="swiper eventGalleryThumbsSwiper">
+          <div class="swiper-wrapper" id="eventGalleryThumbsWrapper">
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryThumbImage"
+                src="assets/images/events/event-placeholder.png"
+                alt="Gallery thumbnail 1"
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryThumbImage"
+                src="assets/images/events/event-placeholder2.png"
+                alt="Gallery thumbnail 2"
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryThumbImage"
+                src="assets/images/events/event-placeholder3.png"
+                alt="Gallery thumbnail 3"
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryThumbImage"
+                src="assets/images/events/event-placeholder4.png"
+                alt="Gallery thumbnail 4"
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                class="eventGalleryThumbImage"
+                src="assets/images/events/event-placeholder5.png"
+                alt="Gallery thumbnail 5"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

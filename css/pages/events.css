@@ -1,0 +1,780 @@
+/* COLORS */
+.eventsPage {
+  width: 100%;
+  background: #F3ECDC;
+  padding: 0 0 4.5rem;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.eventsPage .eventsHero {
+  position: relative;
+  width: 100%;
+  height: clamp(16rem, 36vw, 28rem);
+  margin: 0 0 2rem;
+  overflow: hidden;
+  background: #4A2F1E;
+}
+.eventsPage .eventsHero .eventsHeroImage {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: blur(2px) brightness(0.35);
+  transform: scale(1.1);
+}
+.eventsPage .eventsHero .eventsHeroInner {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.eventsPage .eventsHero .eventsHeroInner .eventsHeroTitle {
+  margin-top: 2.5rem;
+  font-size: 2.75rem;
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #F3ECDC;
+}
+.eventsPage .featuredEventSection,
+.eventsPage .upcomingEventsSection,
+.eventsPage .pastEventsSection {
+  width: 100%;
+  margin: 0 0 4rem;
+  padding: 0 1.3rem;
+}
+.eventsPage .featuredEventSection .sectionHeading,
+.eventsPage .upcomingEventsSection .sectionHeading,
+.eventsPage .pastEventsSection .sectionHeading {
+  margin: 0 0 1.5rem;
+}
+.eventsPage .featuredEventSection .sectionHeading .sectionHeadingRow,
+.eventsPage .upcomingEventsSection .sectionHeading .sectionHeadingRow,
+.eventsPage .pastEventsSection .sectionHeading .sectionHeadingRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.eventsPage .featuredEventSection .sectionHeading .sectionTitle,
+.eventsPage .upcomingEventsSection .sectionHeading .sectionTitle,
+.eventsPage .pastEventsSection .sectionHeading .sectionTitle {
+  margin: 0;
+  flex-shrink: 0;
+  font-size: 1.9rem;
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #4A2F1E;
+}
+.eventsPage .featuredEventSection .sectionHeading .sectionRule,
+.eventsPage .upcomingEventsSection .sectionHeading .sectionRule,
+.eventsPage .pastEventsSection .sectionHeading .sectionRule {
+  width: 100%;
+  height: 0.22rem;
+  border-radius: 999px;
+  background: linear-gradient(to right, #dd9104 0%, rgba(216, 180, 106, 0.82) 40%, rgba(216, 180, 106, 0.22) 100%);
+}
+.eventsPage .featuredEventSection .sectionHeading.sectionHeadingCentered,
+.eventsPage .upcomingEventsSection .sectionHeading.sectionHeadingCentered,
+.eventsPage .pastEventsSection .sectionHeading.sectionHeadingCentered {
+  text-align: center;
+}
+.eventsPage .featuredEventSection .sectionHeading.sectionHeadingCentered .sectionHeadingRow,
+.eventsPage .upcomingEventsSection .sectionHeading.sectionHeadingCentered .sectionHeadingRow,
+.eventsPage .pastEventsSection .sectionHeading.sectionHeadingCentered .sectionHeadingRow {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+}
+.eventsPage .featuredEventSection .sectionHeading.sectionHeadingCentered .sectionTitle,
+.eventsPage .upcomingEventsSection .sectionHeading.sectionHeadingCentered .sectionTitle,
+.eventsPage .pastEventsSection .sectionHeading.sectionHeadingCentered .sectionTitle {
+  flex-shrink: 1;
+}
+.eventsPage .featuredEventSection .sectionHeading.sectionHeadingCentered .sectionRule,
+.eventsPage .upcomingEventsSection .sectionHeading.sectionHeadingCentered .sectionRule,
+.eventsPage .pastEventsSection .sectionHeading.sectionHeadingCentered .sectionRule {
+  width: min(11rem, 42vw);
+}
+.eventsPage .featuredEventSection .featuredEventCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(216, 180, 106, 0.38);
+  box-shadow: 0 18px 40px rgba(74, 47, 30, 0.08);
+  backdrop-filter: blur(8px);
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventImageWrap {
+  position: relative;
+  width: 100%;
+  min-height: 16rem;
+  background: rgba(74, 47, 30, 0.08);
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventImageWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(74, 47, 30, 0.3) 0%, rgba(74, 47, 30, 0.1) 38%, rgba(74, 47, 30, 0.02) 100%);
+  pointer-events: none;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventImageWrap .featuredEventImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 16rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventImageWrap .featuredEventTag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(243, 236, 220, 0.96);
+  color: #4A2F1E;
+  border: 1px solid rgba(216, 180, 106, 0.55);
+  box-shadow: 0 8px 24px rgba(74, 47, 30, 0.14);
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 1.4rem 0;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventDateBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 1.4rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(216, 180, 106, 0.34);
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventDateBlock .featuredEventMonth {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #B54A2F;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventDateBlock .featuredEventDay {
+  font-size: 1.45rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #4A2F1E;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo {
+  padding: 0 1.4rem;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventTitle {
+  margin: 0 0 0.95rem;
+  font-size: 1.8rem;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #4A2F1E;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventMeta .featuredEventMetaItem {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: rgba(74, 47, 30, 0.94);
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventMeta .featuredEventMetaDot {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: #D8B46A;
+  flex-shrink: 0;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventDescription {
+  margin: 0 0 1.35rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4A2F1E;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventActions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventActions .featuredEventBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.9rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: #B54A2F;
+  color: #F3ECDC;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventActions .featuredEventBtn:hover {
+  transform: translateY(-1px);
+  background: rgb(88.5153846154, 56.2192307692, 35.8846153846);
+  box-shadow: 0 12px 24px rgba(74, 47, 30, 0.16);
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventActions .featuredEventSecondaryLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.9rem 1.25rem;
+  border: 1px solid rgba(74, 47, 30, 0.14);
+  border-radius: 5px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  background: transparent;
+  color: #4A2F1E;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventActions .featuredEventSecondaryLink:hover {
+  transform: translateY(-1px);
+  background: rgba(216, 180, 106, 0.12);
+  border-color: rgba(216, 180, 106, 0.48);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid,
+.eventsPage .pastEventsSection .upcomingEventsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(216, 180, 106, 0.34);
+  box-shadow: 0 10px 28px rgba(74, 47, 30, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard:hover,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(74, 47, 30, 0.1);
+  border-color: rgba(216, 180, 106, 0.5);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventImageWrap,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventImageWrap {
+  position: relative;
+  width: 100%;
+  height: 13.5rem;
+  background: rgba(74, 47, 30, 0.08);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventImageWrap::after,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventImageWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(74, 47, 30, 0.26) 0%, rgba(74, 47, 30, 0.08) 45%, rgba(74, 47, 30, 0.01) 100%);
+  pointer-events: none;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventImageWrap .upcomingEventImage,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventImageWrap .upcomingEventImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventImageWrap .upcomingEventStatus,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventImageWrap .upcomingEventStatus {
+  position: absolute;
+  top: 0.95rem;
+  left: 0.95rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.76rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(243, 236, 220, 0.95);
+  color: #4A2F1E;
+  border: 1px solid rgba(216, 180, 106, 0.48);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.15rem 0 1.25rem;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventDate,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventDate {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 1.15rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(216, 180, 106, 0.28);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventDate .upcomingEventMonth,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventDate .upcomingEventMonth {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #B54A2F;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventDate .upcomingEventDay,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventDate .upcomingEventDay {
+  font-size: 1.32rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #4A2F1E;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent {
+  padding: 0 1.15rem;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventTitle,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventTitle {
+  margin: 0 0 0.72rem;
+  font-size: 1.5rem;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #4A2F1E;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventMeta,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.92rem;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventMeta span,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventMeta span {
+  font-size: 0.93rem;
+  line-height: 1.45;
+  font-weight: 500;
+  color: rgba(74, 47, 30, 0.86);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventMeta .upcomingEventMetaDot,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventMeta .upcomingEventMetaDot {
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background: #D8B46A;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventDescription,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventDescription {
+  margin: 0 0 1.15rem;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  color: rgba(74, 47, 30, 0.9);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.85rem;
+  padding: 0.82rem 1.1rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  background: #B54A2F;
+  color: #F3ECDC;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn:hover,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn:hover {
+  transform: translateY(-2px);
+  background: rgb(88.5153846154, 56.2192307692, 35.8846153846);
+  box-shadow: 0 10px 20px rgba(74, 47, 30, 0.16);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard.pastEventCard .upcomingEventImageWrap .upcomingEventStatus,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard.pastEventCard .upcomingEventImageWrap .upcomingEventStatus {
+  background: rgba(74, 47, 30, 0.92);
+  color: #F3ECDC;
+  border-color: rgba(243, 236, 220, 0.14);
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard.pastEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard.pastEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn {
+  background: #4A2F1E;
+  color: #F3ECDC;
+  border-color: transparent;
+}
+.eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard.pastEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn:hover,
+.eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard.pastEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn:hover {
+  background: rgb(190.944, 125.28, 3.456);
+  box-shadow: 0 10px 20px rgba(221, 145, 4, 0.2);
+}
+
+.eventGalleryOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.eventGalleryOverlay.isOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.eventGalleryOverlay .eventGalleryBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(74, 47, 30, 0.42);
+}
+.eventGalleryOverlay .eventGalleryPanel {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  background: #F3ECDC;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+  overflow-y: auto;
+}
+.eventGalleryOverlay.isOpen .eventGalleryPanel {
+  transform: translateY(0);
+}
+.eventGalleryOverlay .eventGalleryHeader {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background: #B54A2F;
+  color: #F3ECDC;
+}
+.eventGalleryOverlay .eventGalleryBackBtn,
+.eventGalleryOverlay .eventGalleryCloseBtn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: transparent;
+  color: #F3ECDC;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.eventGalleryOverlay .eventGalleryBackBtn {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.eventGalleryOverlay .eventGalleryBackBtn img {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+}
+.eventGalleryOverlay .eventGalleryCloseBtn {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+.eventGalleryOverlay .eventGalleryHeaderText {
+  min-width: 0;
+  padding-top: 0.15rem;
+}
+.eventGalleryOverlay .eventGalleryTitle {
+  margin: 0 0 0.3rem;
+  font-size: 1.5rem;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #F3ECDC;
+}
+.eventGalleryOverlay .eventGalleryDate {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: rgba(243, 236, 220, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.eventGalleryOverlay .eventGalleryBody {
+  padding: 1.4rem 1.25rem 1.6rem;
+}
+.eventGalleryOverlay .eventGalleryIntro {
+  margin-bottom: 1.4rem;
+}
+.eventGalleryOverlay .eventGalleryDescription {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4A2F1E;
+}
+.eventGalleryOverlay .eventGalleryMedia {
+  overflow: hidden;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(216, 180, 106, 0.34);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 12px 26px rgba(74, 47, 30, 0.08);
+}
+.eventGalleryOverlay .eventGalleryImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 14rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body.galleryOpen {
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .eventsPage {
+    padding-bottom: 5.5rem;
+  }
+  .eventsPage .eventsHero {
+    margin-bottom: 3.5rem;
+  }
+  .eventsPage .featuredEventSection,
+  .eventsPage .upcomingEventsSection,
+  .eventsPage .pastEventsSection {
+    margin-bottom: 4.25rem;
+    padding: 0 2rem;
+  }
+  .eventsPage .featuredEventSection .sectionHeading,
+  .eventsPage .upcomingEventsSection .sectionHeading,
+  .eventsPage .pastEventsSection .sectionHeading {
+    margin-bottom: 1.75rem;
+  }
+  .eventsPage .featuredEventSection .sectionHeading .sectionHeadingRow,
+  .eventsPage .upcomingEventsSection .sectionHeading .sectionHeadingRow,
+  .eventsPage .pastEventsSection .sectionHeading .sectionHeadingRow {
+    gap: 1.2rem;
+  }
+  .eventsPage .featuredEventSection .sectionHeading .sectionTitle,
+  .eventsPage .upcomingEventsSection .sectionHeading .sectionTitle,
+  .eventsPage .pastEventsSection .sectionHeading .sectionTitle {
+    font-size: 2.2rem;
+  }
+  .eventsPage .featuredEventSection .sectionHeading.sectionHeadingCentered .sectionRule,
+  .eventsPage .upcomingEventsSection .sectionHeading.sectionHeadingCentered .sectionRule,
+  .eventsPage .pastEventsSection .sectionHeading.sectionHeadingCentered .sectionRule {
+    width: 12rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventImageWrap {
+    min-height: 21rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventImageWrap .featuredEventImage {
+    min-height: 21rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent {
+    padding: 1.6rem 0;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventDateBlock {
+    margin: 0 1.6rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo {
+    padding: 0 1.6rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventTitle {
+    font-size: 2rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventActions {
+    flex-direction: row;
+    align-items: center;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventActions .featuredEventBtn,
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventActions .featuredEventSecondaryLink {
+    width: auto;
+  }
+  .eventsPage .upcomingEventsSection .upcomingEventsGrid,
+  .eventsPage .pastEventsSection .upcomingEventsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .eventGalleryOverlay .eventGalleryHeader {
+    padding: 1.15rem 1.2rem 1.15rem 0.95rem;
+  }
+  .eventGalleryOverlay .eventGalleryTitle {
+    font-size: 1.75rem;
+  }
+  .eventGalleryOverlay .eventGalleryBody {
+    padding: 1.6rem 1.5rem 1.8rem;
+  }
+  .eventGalleryOverlay .eventGalleryImage {
+    min-height: 18rem;
+  }
+}
+@media (min-width: 1024px) {
+  .eventsPage {
+    padding-bottom: 6.5rem;
+  }
+  .eventsPage .eventsHero {
+    height: clamp(18rem, 32vw, 28rem);
+    margin-bottom: 4rem;
+  }
+  .eventsPage .eventsHero .eventsHeroInner .eventsHeroTitle {
+    letter-spacing: 0.04rem;
+    font-size: 3rem;
+  }
+  .eventsPage .featuredEventSection,
+  .eventsPage .upcomingEventsSection,
+  .eventsPage .pastEventsSection {
+    padding: 0 3.5vw;
+  }
+  .eventsPage .featuredEventSection .sectionHeading .sectionTitle,
+  .eventsPage .upcomingEventsSection .sectionHeading .sectionTitle,
+  .eventsPage .pastEventsSection .sectionHeading .sectionTitle {
+    font-size: 2.3rem;
+  }
+  .eventsPage .featuredEventSection .sectionHeading .sectionRule,
+  .eventsPage .upcomingEventsSection .sectionHeading .sectionRule,
+  .eventsPage .pastEventsSection .sectionHeading .sectionRule {
+    height: 0.26rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventImageWrap {
+    min-height: 100%;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventImageWrap .featuredEventImage {
+    min-height: 100%;
+    height: 100%;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent {
+    justify-content: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventDateBlock {
+    margin: 0 2rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventDateBlock .featuredEventMonth {
+    font-size: 1.02rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventDateBlock .featuredEventDay {
+    font-size: 1.55rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo {
+    padding: 0 2rem;
+  }
+  .eventsPage .featuredEventSection .featuredEventCard .featuredEventContent .featuredEventInfo .featuredEventTitle {
+    font-size: 2.35rem;
+  }
+  .eventsPage .upcomingEventsSection .upcomingEventsGrid,
+  .eventsPage .pastEventsSection .upcomingEventsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard,
+  .eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard {
+    height: 100%;
+  }
+  .eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody,
+  .eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody {
+    height: calc(100% - 14rem);
+  }
+  .eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent,
+  .eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventDescription,
+  .eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventDescription {
+    flex-grow: 1;
+  }
+  .eventsPage .upcomingEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn,
+  .eventsPage .pastEventsSection .upcomingEventsGrid .upcomingEventCard .upcomingEventBody .upcomingEventContent .upcomingEventBtn {
+    align-self: flex-start;
+  }
+  .eventGalleryOverlay {
+    align-items: center;
+    padding: 2rem;
+  }
+  .eventGalleryOverlay .eventGalleryPanel {
+    width: min(58rem, 100%);
+    min-height: auto;
+    max-height: calc(100vh - 4rem);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 26px 60px rgba(74, 47, 30, 0.22);
+    transform: translateY(24px) scale(0.98);
+  }
+  .eventGalleryOverlay.isOpen .eventGalleryPanel {
+    transform: translateY(0) scale(1);
+  }
+  .eventGalleryOverlay .eventGalleryHeader {
+    padding: 1.15rem 1.35rem 1.15rem 1.05rem;
+  }
+  .eventGalleryOverlay .eventGalleryBackBtn {
+    display: none;
+  }
+  .eventGalleryOverlay .eventGalleryTitle {
+    font-size: 1.95rem;
+  }
+  .eventGalleryOverlay .eventGalleryDate {
+    font-size: 1rem;
+  }
+  .eventGalleryOverlay .eventGalleryBody {
+    padding: 1.65rem 1.65rem 1.85rem;
+  }
+  .eventGalleryOverlay .eventGalleryDescription {
+    font-size: 1.02rem;
+  }
+  .eventGalleryOverlay .eventGalleryImage {
+    min-height: 22rem;
+    max-height: 28rem;
+  }
+}/*# sourceMappingURL=events.css.map */

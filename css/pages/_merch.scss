@@ -1,0 +1,62 @@
+  .eventsHero {
+    position: relative;
+    width: 100%;
+    height: clamp(16rem, 36vw, 28rem);
+    margin: 0 0 2rem;
+    overflow: hidden;
+    background: $brown;
+
+    .eventsHeroImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(2px) brightness(0.35);
+      transform: scale(1.1);
+    }
+
+    .eventsHeroInner {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+
+      .eventsHeroTitle {
+        margin-top: 2.5rem;
+        font-size: 2.75rem;
+        line-height: 0.95;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: $sand;
+      }
+    }
+  }
+
+@media screen and (min-width: 768px) {
+    .eventsPage {
+        .eventsHero {
+            margin-bottom: 3.5rem;
+        } 
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .eventsPage {
+        padding-bottom: 6.5rem;
+
+        .eventsHero {
+        height: clamp(18rem, 32vw, 28rem);
+        margin-bottom: 4rem;
+
+        .eventsHeroInner {
+            .eventsHeroTitle {
+            letter-spacing: 0.04rem;
+            font-size: 3rem;
+            }
+        }
+    }
+    }
+}

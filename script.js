@@ -647,3 +647,206 @@ document.addEventListener("keydown", async (e) => {
       }
     });
   });
+
+/* EVENTS */
+const mobileSectionTitles = document.querySelectorAll(
+  ".upcomingEventsSection .sectionHeading, .pastEventsSection .sectionHeading"
+);
+
+const mobileBreakpoint = window.matchMedia("(max-width: 767px)");
+
+function toggleCenteredSectionHeadings(e) {
+  mobileSectionTitles.forEach((heading) => {
+    heading.classList.toggle("sectionHeadingCentered", e.matches);
+  });
+}
+
+toggleCenteredSectionHeadings(mobileBreakpoint);
+
+if (typeof mobileBreakpoint.addEventListener === "function") {
+  mobileBreakpoint.addEventListener("change", toggleCenteredSectionHeadings);
+} else {
+  mobileBreakpoint.addListener(toggleCenteredSectionHeadings);
+}
+
+const galleryOverlay = document.getElementById("eventGalleryOverlay");
+const galleryPanel = document.getElementById("eventGalleryPanel");
+const galleryTitle = document.getElementById("eventGalleryTitle");
+const galleryDescription = document.getElementById("eventGalleryDescription");
+
+const galleryDateValue = document.getElementById("eventGalleryDateValue");
+const galleryLocationValue = document.getElementById("eventGalleryLocationValue");
+const galleryAttendeesValue = document.getElementById("eventGalleryAttendeesValue");
+
+const galleryOpenButtons = document.querySelectorAll(".js-open-gallery");
+const galleryCloseButtons = document.querySelectorAll(".js-gallery-close");
+
+const mainWrapper = document.getElementById("eventGalleryMainWrapper");
+const thumbsWrapper = document.getElementById("eventGalleryThumbsWrapper");
+
+let eventGalleryThumbsSwiper = null;
+let eventGalleryMainSwiper = null;
+
+function getDefaultGallerySlides() {
+  return [
+    {
+      src: "assets/images/events/event-placeholder.png",
+      alt: "Event gallery image 1",
+    },
+    {
+      src: "assets/images/events/event-placeholder2.png",
+      alt: "Event gallery image 2",
+    },
+    {
+      src: "assets/images/events/event-placeholder3.png",
+      alt: "Event gallery image 3",
+    },
+    {
+      src: "assets/images/events/event-placeholder4.png",
+      alt: "Event gallery image 4",
+    },
+    {
+      src: "assets/images/events/event-placeholder5.png",
+      alt: "Event gallery image 5",
+    },
+  ];
+}
+
+function buildGallerySlides(slides) {
+  const mainSlidesMarkup = slides
+    .map(
+      (slide, index) => `
+        <div class="swiper-slide">
+          <img
+            class="eventGalleryImage"
+            src="${slide.src}"
+            alt="${slide.alt || `Event gallery image ${index + 1}`}"
+          />
+        </div>
+      `
+    )
+    .join("");
+
+  const thumbSlidesMarkup = slides
+    .map(
+      (slide, index) => `
+        <div class="swiper-slide">
+          <img
+            class="eventGalleryThumbImage"
+            src="${slide.src}"
+            alt="${slide.alt || `Gallery thumbnail ${index + 1}`}"
+          />
+        </div>
+      `
+    )
+    .join("");
+
+  mainWrapper.innerHTML = mainSlidesMarkup;
+  thumbsWrapper.innerHTML = thumbSlidesMarkup;
+}
+
+function destroyGallerySwipers() {
+  if (eventGalleryMainSwiper) {
+    eventGalleryMainSwiper.destroy(true, true);
+    eventGalleryMainSwiper = null;
+  }
+
+  if (eventGalleryThumbsSwiper) {
+    eventGalleryThumbsSwiper.destroy(true, true);
+    eventGalleryThumbsSwiper = null;
+  }
+}
+
+function initGallerySwipers() {
+  destroyGallerySwipers();
+
+  eventGalleryThumbsSwiper = new Swiper(".eventGalleryThumbsSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 6,
+    // centeredSlides: true,
+    loop: true,
+    slideToClickedSlide: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      768: {
+        spaceBetween: 14,
+      },
+      1024: {
+        spaceBetween: 6,
+        slidesPerView: 4,
+      },
+    },
+  });
+
+  eventGalleryMainSwiper = new Swiper(".eventGalleryMainSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 12,
+    loop: true,
+    speed: 550,
+    pagination: {
+      el: ".eventGalleryPagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".eventGalleryArrowNext",
+      prevEl: ".eventGalleryArrowPrev",
+    },
+    thumbs: {
+      swiper: eventGalleryThumbsSwiper,
+    },
+  });
+}
+
+function openGallery(button) {
+  const eventTitle = button.dataset.eventTitle || "Event";
+  const eventDate = button.dataset.eventDate || "TBD";
+  const eventLocation = button.dataset.eventLocation || "TBD";
+  const eventAttendees = button.dataset.eventAttendees || "TBD";
+  const eventDescription = button.dataset.eventDescription || "";
+
+  galleryTitle.textContent = eventTitle;
+  galleryDateValue.textContent = eventDate;
+  galleryLocationValue.textContent = eventLocation;
+  galleryAttendeesValue.textContent = eventAttendees;
+  galleryDescription.textContent = eventDescription;
+
+  const slides = getDefaultGallerySlides();
+  buildGallerySlides(slides);
+
+  galleryOverlay.classList.add("isOpen");
+  galleryOverlay.setAttribute("aria-hidden", "false");
+  document.body.classList.add("galleryOpen");
+
+  initGallerySwipers();
+}
+
+function closeGallery() {
+  galleryOverlay.classList.remove("isOpen");
+  galleryOverlay.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("galleryOpen");
+}
+
+galleryOpenButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    openGallery(button);
+  });
+});
+
+galleryCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeGallery);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && galleryOverlay.classList.contains("isOpen")) {
+    closeGallery();
+  }
+});
+
+galleryOverlay.addEventListener("click", (event) => {
+  const isDesktop = window.innerWidth >= 1024;
+  const clickedInsidePanel = galleryPanel.contains(event.target);
+
+  if (isDesktop && !clickedInsidePanel) {
+    closeGallery();
+  }
+});

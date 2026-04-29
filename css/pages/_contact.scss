@@ -1,0 +1,266 @@
+/* VARIABLES */
+@use '../base/variables' as *;
+
+.contactPage {
+  background: $sand;
+  color: $brown;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
+  .contactWrap {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+
+    .contactHeader {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      .contactTitle {
+        margin: 0;
+        font-size: 3rem;
+        letter-spacing: -0.6px;
+        line-height: 1.1;
+      }
+
+      .contactSubtitle {
+        margin: 12px auto 0;
+        max-width: 680px;
+        font-size: 1.25rem;
+        line-height: 1.65;
+        color: rgba($brown, 0.82);
+      }
+
+      .contactRule {
+        width: 140px;
+        height: 3px;
+        margin: 18px auto 0;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          rgba($gold, 0) 0%,
+          $gold 35%,
+          $strongGold 65%,
+          rgba($gold, 0) 100%
+        );
+        box-shadow: 0 6px 16px rgba($brown, 0.12);
+      }
+    }
+
+    .contactGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: stretch;
+
+      .contactCard {
+        position: relative;
+        border-radius: 18px;
+        background: rgba(#fff, 0.55);
+        border: 1px solid rgba($gold, 0.55);
+        box-shadow: 0 16px 40px rgba($brown, 0.10), 0 1px 0 rgba(#fff, 0.65) inset;
+        padding: 18px 18px 16px;
+        overflow: hidden;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: -2px;
+          background:
+            radial-gradient(circle at 20% 10%, rgba($strongGold, 0.18), transparent 55%),
+            radial-gradient(circle at 85% 20%, rgba($red, 0.14), transparent 55%),
+            radial-gradient(circle at 40% 90%, rgba($gold, 0.14), transparent 60%);
+          pointer-events: none;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: linear-gradient(
+            transparent 0,
+            transparent 60%,
+            rgba($gold, 0.08) 100%
+          );
+          pointer-events: none;
+        }
+
+        &:hover {
+          transform: translateY(-1.5px);
+          border-color: rgba($strongGold, 0.65);
+          box-shadow: 0 18px 52px rgba($brown, 0.14), 0 1px 0 rgba(#fff, 0.7) inset;
+
+        }
+
+        .contactCardTop {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          padding-bottom: 14px;
+          margin-bottom: 14px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 2px;
+            border-radius: 999px;
+            background: linear-gradient(
+              90deg,
+              rgba($gold, 0) 0%,
+              rgba($gold, 0.85) 30%,
+              rgba($strongGold, 0.85) 70%,
+              rgba($gold, 0) 100%
+            );
+            opacity: 0.95;
+          }
+
+          .contactIcon {
+            height: 2rem;
+            width: 2rem;
+          }
+
+          .contactCardHeading {
+            flex: 1;
+            min-width: 0;
+
+            .contactCardTitle {
+              margin: 0;
+              font-size: 1.5rem;
+              letter-spacing: 0.2px;
+            }
+          }
+        }
+
+        .contactCardBody {
+          position: relative;
+          padding: 2px 2px 10px;
+
+          .contactValue {
+            display: inline-block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.15px;
+            color: $brown;
+            text-decoration: none;
+            border-bottom: 2px solid rgba($gold, 0);
+            transition: border-color 160ms ease, color 160ms ease;
+            margin-top: 0.25rem;
+
+            &:hover {
+              color: $red;
+              text-decoration: underline;
+            }
+          }
+
+        }
+
+        .contactCardActions {
+          position: relative;
+          display: flex;
+          gap: 10px;
+          margin-top: 14px;
+
+          .btnPrimary,
+          .btnGhost {
+            appearance: none;
+            border: 0;
+            cursor: pointer;
+            border-radius: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.75rem 0.75rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 160ms ease, filter 160ms ease, background 160ms ease,
+              border-color 160ms ease;
+            user-select: none;
+          }
+
+          .btnPrimary {
+            flex: 1;
+            background: linear-gradient(135deg, $strongGold, $gold);
+            color: $brown;
+            box-shadow: 0 10px 22px rgba($brown, 0.14);
+
+            &:hover {
+              transform: translateY(-1px);
+              filter: brightness(1.02);
+            }
+
+            &:active {
+              transform: translateY(0);
+              filter: brightness(0.98);
+            }
+          }
+
+          .btnGhost {
+            min-width: 96px;
+            background: rgba(#fff, 0.55);
+            color: $brown;
+            border: 1px solid rgba($gold, 0.8);
+            box-shadow: 0 10px 18px rgba($brown, 0.10);
+
+            &:hover {
+              border-color: rgba($strongGold, 0.9);
+              filter: brightness(1.02);
+            }
+
+            &:active {
+              filter: brightness(0.98);
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contactPage {
+    .contactWrap {
+      .contactGrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contactPage {
+    margin-top: 2.5rem;
+
+    .contactWrap {
+      .contactHeader {
+        .contactTitle {
+          font-size: 2.15rem;
+        }
+
+        .contactSubtitle {
+          font-size: 1.15rem;
+        }
+      }
+
+      .contactGrid {
+        grid-template-columns: repeat(1, 1fr);
+
+        .contactCard {
+          .contactCardTop {
+            .contactCardHeading {
+              .contactCardTitle {
+                font-size: 1.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

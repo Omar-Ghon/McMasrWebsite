@@ -1,0 +1,1207 @@
+@use '../base/variables' as *;
+
+.eventsPage {
+  width: 100%;
+  background: $sand;
+  padding: 0 0 4.5rem;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  .eventsHero {
+    position: relative;
+    width: 100%;
+    height: clamp(16rem, 36vw, 28rem);
+    margin: 0 0 2rem;
+    overflow: hidden;
+    background: $brown;
+
+    .eventsHeroImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(2px) brightness(0.35);
+      transform: scale(1.1);
+    }
+
+    .eventsHeroInner {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+
+      .eventsHeroTitle {
+        margin-top: 2.5rem;
+        font-size: 2.75rem;
+        line-height: 0.95;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: $sand;
+      }
+    }
+  }
+
+  .featuredEventSection,
+  .upcomingEventsSection,
+  .pastEventsSection {
+    width: 100%;
+    margin: 0 0 4rem;
+    padding: 0 1.3rem;
+
+    .sectionHeading {
+      margin: 0 0 1.5rem;
+
+      .sectionHeadingRow {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .sectionTitle {
+        margin: 0;
+        flex-shrink: 0;
+        font-size: 1.9rem;
+        line-height: 1.02;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        color: $brown;
+      }
+
+      .sectionRule {
+        width: 100%;
+        height: 0.22rem;
+        border-radius: 999px;
+        background: linear-gradient(
+          to right,
+          rgba($strongGold, 1) 0%,
+          rgba($gold, 0.82) 40%,
+          rgba($gold, 0.22) 100%
+        );
+      }
+
+      &.sectionHeadingCentered {
+        text-align: center;
+
+        .sectionHeadingRow {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.85rem;
+        }
+
+        .sectionTitle {
+          flex-shrink: 1;
+        }
+
+        .sectionRule {
+          width: min(11rem, 42vw);
+        }
+      }
+    }
+  }
+
+  .featuredEventSection {
+    .featuredEventCard {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: rgba(#fff, 0.62);
+      border: 1px solid rgba($gold, 0.38);
+      box-shadow: 0 18px 40px rgba($brown, 0.08);
+      backdrop-filter: blur(8px);
+
+      .featuredEventImageWrap {
+        position: relative;
+        width: 100%;
+        min-height: 16rem;
+        background: rgba($brown, 0.08);
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to top,
+            rgba($brown, 0.3) 0%,
+            rgba($brown, 0.1) 38%,
+            rgba($brown, 0.02) 100%
+          );
+          pointer-events: none;
+        }
+
+        .featuredEventImage {
+          display: block;
+          width: 100%;
+          height: 100%;
+          min-height: 16rem;
+          object-fit: cover;
+        }
+
+        .featuredEventTag {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          z-index: 1;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.55rem 0.9rem;
+          border-radius: 999px;
+          font-size: 0.74rem;
+          font-weight: 800;
+          line-height: 1;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          background: rgba($sand, 0.96);
+          color: $brown;
+          border: 1px solid rgba($gold, 0.55);
+          box-shadow: 0 8px 24px rgba($brown, 0.14);
+        }
+      }
+
+      .featuredEventContent {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+        padding: 1.4rem 0;
+
+        .featuredEventDateBlock {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          margin: 0 1.4rem;
+          padding-bottom: 0.85rem;
+          border-bottom: 1px solid rgba($gold, 0.34);
+
+          .featuredEventIcon {
+            width: 1.5rem;
+            height: 1.5rem;
+
+            .featuredEventCalendar {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .featuredEventMonth {
+            font-size: 1.35rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: $red;
+          }
+
+          .featuredEventDay {
+            font-size: 1.45rem;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: $brown;
+          }
+        }
+
+        .featuredEventInfo {
+          padding: 0 1.4rem;
+
+          .featuredEventTitle {
+            margin: 0 0 0.95rem;
+            font-size: 1.8rem;
+            line-height: 1.08;
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            color: $brown;
+          }
+
+          .featuredEventMeta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 0 1rem;
+
+            .featuredEventMetaItem {
+              font-size: 1rem;
+              line-height: 1.5;
+              font-weight: 500;
+              color: rgba($brown, 0.94);
+            }
+
+            .featuredEventMetaDot {
+              width: 0.32rem;
+              height: 0.32rem;
+              border-radius: 50%;
+              background: $gold;
+              flex-shrink: 0;
+            }
+          }
+
+          .featuredEventDescription {
+            margin: 0 0 1.35rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: $brown;
+          }
+
+          .featuredEventActions {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.75rem;
+
+            .featuredEventBtn {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 3rem;
+              padding: 0.9rem 1.25rem;
+              border: 1px solid transparent;
+              border-radius: 5px;
+              font-size: 1.15rem;
+              font-weight: 800;
+              text-decoration: none;
+              background: $red;
+              color: $sand;
+              transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+              &:hover {
+                transform: translateY(-1px);
+                background: lighten($brown, 4%);
+                box-shadow: 0 12px 24px rgba($brown, 0.16);
+              }
+            }
+
+            .featuredEventSecondaryLink {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 3rem;
+              padding: 0.9rem 1.25rem;
+              border: 1px solid rgba($brown, 0.14);
+              border-radius: 5px;
+              font-size: 1.15rem;
+              font-weight: 800;
+              letter-spacing: 0.02em;
+              text-decoration: none;
+              background: transparent;
+              color: $brown;
+              transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+
+              &:hover {
+                transform: translateY(-1px);
+                background: rgba($gold, 0.12);
+                border-color: rgba($gold, 0.48);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .upcomingEventsSection,
+  .pastEventsSection {
+    .upcomingEventsGrid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
+
+      .upcomingEventCard {
+        overflow: hidden;
+        border-radius: 1.25rem;
+        background: rgba(#fff, 0.58);
+        border: 1px solid rgba($gold, 0.34);
+        box-shadow: 0 10px 28px rgba($brown, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 18px 34px rgba($brown, 0.1);
+          border-color: rgba($gold, 0.5);
+        }
+
+        .upcomingEventImageWrap {
+          position: relative;
+          width: 100%;
+          height: 13.5rem;
+          background: rgba($brown, 0.08);
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              to top,
+              rgba($brown, 0.26) 0%,
+              rgba($brown, 0.08) 45%,
+              rgba($brown, 0.01) 100%
+            );
+            pointer-events: none;
+          }
+
+          .upcomingEventImage {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .upcomingEventStatus {
+            position: absolute;
+            top: 0.95rem;
+            left: 0.95rem;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.45rem 0.76rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: rgba($sand, 0.95);
+            color: $brown;
+            border: 1px solid rgba($gold, 0.48);
+          }
+        }
+
+        .upcomingEventBody {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1.15rem 0 1.25rem;
+
+          .upcomingEventDate {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 0 1.15rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid rgba($gold, 0.28);
+
+            .upcomingEventIcon {
+              width: 1.5rem;
+              height: 1.5rem;
+
+              .upcomingEventCalendar {
+                height: 100%;
+                width: 100%;
+              }
+            }
+
+            .upcomingEventMonth {
+              font-size: 1.25rem;
+              font-weight: 800;
+              line-height: 1;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              color: $red;
+            }
+
+            .upcomingEventDay {
+              font-size: 1.32rem;
+              line-height: 1;
+              font-weight: 800;
+              letter-spacing: -0.02em;
+              color: $brown;
+            }
+          }
+
+          .upcomingEventContent {
+            padding: 0 1.15rem;
+
+            .upcomingEventTitle {
+              margin: 0 0 0.72rem;
+              font-size: 1.5rem;
+              line-height: 1.08;
+              font-weight: 800;
+              letter-spacing: -0.03em;
+              color: $brown;
+            }
+
+            .upcomingEventMeta {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 0.45rem;
+              margin: 0 0 0.92rem;
+
+              span {
+                font-size: 0.93rem;
+                line-height: 1.45;
+                font-weight: 500;
+                color: rgba($brown, 0.86);
+              }
+
+              .upcomingEventMetaDot {
+                width: 0.28rem;
+                height: 0.28rem;
+                border-radius: 50%;
+                background: $gold;
+              }
+            }
+
+            .upcomingEventDescription {
+              margin: 0 0 1.15rem;
+              font-size: 0.97rem;
+              line-height: 1.72;
+              color: $brown;
+            }
+
+            .upcomingEventBtn {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 2.85rem;
+              padding: 0.82rem 1.1rem;
+              border-radius: 5px;
+              border: 1px solid transparent;
+              font-size: 1.05rem;
+              font-weight: 800;
+              letter-spacing: 0.02em;
+              text-decoration: none;
+              background: $red;
+              color: $sand;
+              transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+              cursor: pointer;
+
+              &:hover {
+                transform: translateY(-2px);
+                background: lighten($brown, 4%);
+                box-shadow: 0 10px 20px rgba($brown, 0.16);
+              }
+            }
+          }
+        }
+
+        &.pastEventCard {
+          .upcomingEventImageWrap {
+            .upcomingEventStatus {
+              background: rgba($brown, 0.92);
+              color: $sand;
+              border-color: rgba($sand, 0.14);
+            }
+          }
+
+          .upcomingEventBody {
+            .upcomingEventContent {
+              .upcomingEventBtn {
+                background: $brown;
+                color: $sand;
+                border-color: transparent;
+
+                &:hover {
+                  background: darken($strongGold, 6%);
+                  box-shadow: 0 10px 20px rgba($strongGold, 0.2);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.eventGalleryOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+
+  &.isOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .eventGalleryBackdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba($brown, 0.42);
+  }
+
+  .eventGalleryPanel {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background: $sand;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .eventGalleryHeader {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.15rem 1rem;
+    background: $brown;
+    color: white;
+    border-bottom: 1px solid rgba($sand, 0.12);
+  }
+
+  &.isOpen .eventGalleryPanel {
+    transform: translateY(0);
+  }
+
+  .eventGalleryBackBtn,
+  .eventGalleryCloseBtn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: $sand;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .eventGalleryBackBtn {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+
+    img {
+      width: 1.25rem;
+      height: 1.25rem;
+      display: block;
+    }
+  }
+
+  .eventGalleryCloseBtn {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 400;
+    flex-shrink: 0;
+    padding-bottom: 0.25rem;
+
+    .eventGalleryCloseImg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .eventGalleryHeaderIcon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .eventGalleryHeaderText {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .eventGalleryTitle {
+    font-size: 1.5rem;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: white;
+  }
+
+  .eventGalleryDate {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: rgba($sand, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .eventGalleryBody {
+    padding: 1rem 1.25rem 5rem;
+  }
+
+  .eventGalleryMeta {
+  
+  .eventGalleryMetaCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.35rem;
+
+
+  .eventGalleryMetaCard {
+    min-width: 0;
+    padding: 0.95rem 0.5rem 0.9rem;
+    border-radius: 1rem;
+    border: 1px solid rgba($gold, 0.28);
+    background: rgba(#fff, 0.58);
+    box-shadow: 0 8px 18px rgba($brown, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.45rem;
+  }
+
+  .eventGalleryMetaIcon {
+    width: 1.75rem;
+    height: 1.75rem;
+    object-fit: contain;
+  }
+
+  .eventGalleryMetaLabel {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: $brown;
+  }
+
+  .eventGalleryMetaValue {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: black;
+    overflow-wrap: anywhere;
+  }
+}
+  }
+
+  .eventGalleryIntro {
+    margin-bottom: 1.4rem;
+  }
+
+  .eventGalleryDescription {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: black;
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: $brown;
+  }
+
+    .eventGallery {
+    margin-top: 1.25rem;
+  }
+
+  .eventGalleryMain {
+    margin-bottom: 1rem;
+  }
+
+  .eventGalleryMainSwiper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 1px solid rgba($gold, 0.34);
+    background: rgba(#fff, 0.58);
+    box-shadow: 0 12px 26px rgba($brown, 0.08);
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 17rem;
+      background: rgba($brown, 0.03);
+    }
+  }
+
+  .eventGalleryImage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .eventGalleryPagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.95rem 0 1rem;
+
+    .swiper-pagination-bullet {
+      width: 0.55rem;
+      height: 0.55rem;
+      margin: 0 !important;
+      border-radius: 999px;
+      background: rgba($brown, 0.24);
+      opacity: 1;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $red;
+      transform: scale(1.15);
+    }
+  }
+
+  .eventGalleryArrow {
+    display: none;
+    position: absolute;
+    top: 45%;
+    z-index: 3;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 999px;
+    background: rgba($sand, 0.92);
+    color: $brown;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba($brown, 0.14);
+    transition: transform 0.2s ease, background 0.2s ease;
+    padding-bottom: 0.2rem;
+
+    &:hover {
+      background: rgba(#fff, 1);
+      transform: translateY(-50%) scale(1.04);
+    }
+  }
+
+  .eventGalleryArrowPrev {
+    left: 1rem;
+  }
+
+  .eventGalleryArrowNext {
+    right: 1rem;
+  }
+
+  .eventGalleryThumbsWrap {
+    margin-bottom: 3rem;
+  }
+
+  .eventGalleryThumbsSwiper {
+    overflow: visible;
+    padding: 0.2rem 0 0.3rem;
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+
+    .swiper-slide {
+      width: 8rem;
+      height: 6rem;
+      opacity: 0.8;
+      transform: scale(0.84);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      cursor: pointer;
+    }
+
+    .swiper-slide-thumb-active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  .eventGalleryThumbImage {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 2px solid rgba($gold, 0.28);
+    box-shadow: 0 8px 20px rgba($brown, 0.08);
+    background: rgba(white, 0.6);
+    padding: 0.65rem;
+    height: 6rem;
+  }
+}
+
+body.galleryOpen {
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .eventsPage {
+    padding-bottom: 5.5rem;
+
+    .eventsHero {
+      margin-bottom: 3.5rem;
+    }
+
+    .featuredEventSection,
+    .upcomingEventsSection,
+    .pastEventsSection {
+      margin-bottom: 4.25rem;
+      padding: 0 2rem;
+
+      .sectionHeading {
+        margin-bottom: 1.75rem;
+
+        .sectionHeadingRow {
+          gap: 1.2rem;
+        }
+
+        .sectionTitle {
+          font-size: 2.2rem;
+        }
+
+        &.sectionHeadingCentered {
+          .sectionRule {
+            width: 12rem;
+          }
+        }
+      }
+    }
+
+    .featuredEventSection {
+      .featuredEventCard {
+        .featuredEventImageWrap {
+          min-height: 21rem;
+
+          .featuredEventImage {
+            min-height: 21rem;
+          }
+        }
+
+        .featuredEventContent {
+          padding: 1.6rem 0;
+
+          .featuredEventDateBlock {
+            margin: 0 1.6rem;
+          }
+
+          .featuredEventInfo {
+            padding: 0 1.6rem;
+
+            .featuredEventTitle {
+              font-size: 2rem;
+            }
+
+            .featuredEventActions {
+              flex-direction: row;
+              align-items: center;
+
+              .featuredEventBtn,
+              .featuredEventSecondaryLink {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .upcomingEventsSection,
+    .pastEventsSection {
+      .upcomingEventsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+    }
+  }
+
+  .eventGalleryOverlay {
+    .eventGalleryHeader {
+      padding: 1.15rem 1.2rem 1.15rem 0.95rem;
+    }
+
+    .eventGalleryTitle {
+      font-size: 1.75rem;
+    }
+
+    .eventGalleryBody {
+      padding: 1.6rem 1.5rem 1.8rem;
+    }
+
+    .eventGalleryMainSwiper {
+      .swiper-slide {
+        height: 22rem;
+      }
+    }
+    .eventGalleryThumbsSwiper {
+      .swiper-slide {
+        width: 6.5rem;
+      }
+    }
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .eventsPage {
+    padding-bottom: 6.5rem;
+
+    .eventsHero {
+      height: clamp(18rem, 32vw, 28rem);
+      margin-bottom: 4rem;
+
+      .eventsHeroInner {
+        .eventsHeroTitle {
+          letter-spacing: 0.04rem;
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .featuredEventSection,
+    .upcomingEventsSection,
+    .pastEventsSection {
+      padding: 0 3.5vw;
+
+      .sectionHeading {
+        .sectionTitle {
+          font-size: 2.3rem;
+        }
+
+        .sectionRule {
+          height: 0.26rem;
+        }
+      }
+    }
+
+    .featuredEventSection {
+      .featuredEventCard {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+        align-items: stretch;
+
+        .featuredEventImageWrap {
+          min-height: 100%;
+
+          .featuredEventImage {
+            min-height: 100%;
+            height: 100%;
+          }
+        }
+
+        .featuredEventContent {
+          justify-content: center;
+          padding: 2rem 0;
+          gap: 1.5rem;
+
+          .featuredEventDateBlock {
+            margin: 0 2rem;
+
+            .featuredEventMonth {
+              font-size: 1.02rem;
+            }
+
+            .featuredEventDay {
+              font-size: 1.55rem;
+            }
+          }
+
+          .featuredEventInfo {
+            padding: 0 2rem;
+
+            .featuredEventTitle {
+              font-size: 2.35rem;
+            }
+          }
+        }
+      }
+    }
+
+    .upcomingEventsSection,
+    .pastEventsSection {
+      .upcomingEventsGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        .upcomingEventCard {
+          height: 100%;
+
+          .upcomingEventBody {
+            height: calc(100% - 14rem);
+
+            .upcomingEventContent {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+
+              .upcomingEventDescription {
+                flex-grow: 1;
+              }
+
+              .upcomingEventBtn {
+                align-self: flex-start;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .eventGalleryOverlay {
+    align-items: center;
+    padding: 2rem;
+
+  .eventGalleryPanel {
+    width: min(60rem, 100%);
+    min-height: auto;
+    max-height: calc(100vh - 4rem);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 26px 60px rgba($brown, 0.22);
+    transform: translateY(24px) scale(0.98);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eventGalleryHeader {
+    flex-shrink: 0;
+    padding: 1.25rem 2rem;
+
+    .eventGalleryHeaderText {
+      gap: 2rem;
+    }
+
+    .eventGalleryHeaderIcon {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+
+  .eventGalleryBody {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem 2rem 1rem;
+  }
+
+    &.isOpen .eventGalleryPanel {
+      transform: translateY(0) scale(1);
+    }
+
+    .eventGalleryCloseBtn {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    .eventGalleryBackBtn {
+      display: none;
+    }
+
+    .eventGalleryTitle {
+      font-size: 1.95rem;
+    }
+
+    .eventGalleryMeta {
+      .eventGalleryMetaCards {
+        gap: 1.25rem;
+
+        .eventGalleryMetaCard {
+          flex-direction: row;
+          justify-content: center;
+          gap: 0.5rem;
+          align-items: center;
+          padding: 1rem 0.5rem 0.8rem 0;
+
+          .eventGalleryMetaIcon {
+            height: 2.25rem;
+            width: 2.25rem;
+            padding-top: 0.05rem;
+          }
+
+          .eventGalleryMetaValue {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+
+
+    .eventGalleryDate {
+      font-size: 1rem;
+    }
+
+    .eventGalleryDescription {
+      font-size: 1.02rem;
+    }
+
+    .eventGalleryArrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sectionTitle {
+      font-size: 1.5rem;
+    }
+
+    .eventGalleryDescription {
+      font-size: 1.15rem;
+    }
+
+    .eventGalleryMainSwiper {
+      margin: 0 2rem;
+
+      .swiper-slide {
+        height: 22rem;
+      }
+    }
+
+    .eventGalleryThumbsSwiper {
+    overflow: visible;
+    padding: 0.2rem 0 0.3rem;
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+
+    .swiper-slide {
+      width: 8rem;
+      height: 6rem;
+      opacity: 0.8;
+      transform: scale(0.84);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      cursor: pointer;
+    }
+
+    .swiper-slide-thumb-active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+    .eventGalleryThumbImage {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      border: 2px solid rgba($gold, 0.28);
+      box-shadow: 0 8px 20px rgba($brown, 0.08);
+      background: rgba(white, 0.6);
+      padding: 0.65rem;
+      height: 6rem;
+    }
+
+    
+  }
+}
